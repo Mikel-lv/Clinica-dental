@@ -10,5 +10,5 @@ package Entidades;
  * @author Mikel
  */
 public class Revision {
-    
+    private String anotacion;
 }

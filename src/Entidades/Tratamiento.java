@@ -12,8 +12,9 @@ import java.sql.Date;
  * @author Mikel
  */
 public class Tratamiento {
-    protected long id;
-    protected String nombre_descriptivo;
-    protected Date fecha_inicio;
+    private long id;
+    private String nombre_descriptivo;
+    private Date fecha_inicio;
+    private boolean consentimiento;
     
 }

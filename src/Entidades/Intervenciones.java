@@ -11,4 +11,6 @@ package Entidades;
  */
 public class Intervenciones {
     private int duracion;
+    
+    
 }

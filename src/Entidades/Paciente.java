@@ -10,10 +10,9 @@ package Entidades;
  * @author Mikel
  */
 public class Paciente {
-    protected long id;
-    protected String nombre;
-    protected String apellidos;
-    protected String telefono;
-    protected String direccion;
-    protected String DNI;
+    private long id;
+    private String nombre;
+    private String apellidos;
+    private String direccion;
+    private String DNI;
 }

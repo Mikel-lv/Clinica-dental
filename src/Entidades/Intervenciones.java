@@ -11,6 +11,18 @@ package Entidades;
  */
 public class Intervenciones {
     private int duracion;
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public Intervenciones() {
+    }
     
     
 }

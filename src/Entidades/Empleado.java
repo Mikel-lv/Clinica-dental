@@ -72,11 +72,11 @@ public class Empleado {
     
     //Constructor de copia
     public Empleado(Empleado e){
-        this.id = e.getId();
-        this.nombre = e.getNombre();
-        this.apellidos = e.getApellidos();
-        this.tlfcontacto = e.getTlfcontacto();
-        this.NIF = e.getNIF();
-        this.direccion = e.getDireccion();
+        this.id = e.id;
+        this.nombre = e.nombre;
+        this.apellidos = e.apellidos;
+        this.tlfcontacto = e.tlfcontacto;
+        this.NIF = e.NIF;
+        this.direccion = e.direccion;
     }
 }

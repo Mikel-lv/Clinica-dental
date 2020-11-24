@@ -29,6 +29,6 @@ public class Secretariado extends Empleado {
     //Constructor de copia
     
     public Secretariado(Secretariado s){
-        this.experiencia = s.getExperiencia();
+        this.experiencia = s.experiencia;
     }
 }

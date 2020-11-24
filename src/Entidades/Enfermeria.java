@@ -28,6 +28,6 @@ public class Enfermeria extends Empleado{
     
     //Constructor de copia
     public Enfermeria(Enfermeria e){
-        this.categoria = e.getCategoria();
+        this.categoria = e.categoria;
     }
 }

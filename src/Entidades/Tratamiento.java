@@ -16,5 +16,63 @@ public class Tratamiento {
     private String nombre_descriptivo;
     private Date fecha_inicio;
     private boolean consentimiento;
+    private Cobro cobro;
+    private InformeGlobal informeGlobal;
+
+    public Tratamiento() {
+    }
+
+    public Cobro getCobro() {
+        return cobro;
+    }
+
+    public void setCobro(Cobro cobro) {
+        this.cobro = cobro;
+    }
+
+    public InformeGlobal getInformeGlobal() {
+        return informeGlobal;
+    }
+
+    public void setInformeGlobal(InformeGlobal informeGlobal) {
+        this.informeGlobal = informeGlobal;
+    }
+
+    
+    
+    
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNombre_descriptivo() {
+        return nombre_descriptivo;
+    }
+
+    public void setNombre_descriptivo(String nombre_descriptivo) {
+        this.nombre_descriptivo = nombre_descriptivo;
+    }
+
+    public Date getFecha_inicio() {
+        return fecha_inicio;
+    }
+
+    public void setFecha_inicio(Date fecha_inicio) {
+        this.fecha_inicio = fecha_inicio;
+    }
+
+    public boolean isConsentimiento() {
+        return consentimiento;
+    }
+
+    public void setConsentimiento(boolean consentimiento) {
+        this.consentimiento = consentimiento;
+    }
+    
     
 }
+

@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author punib
@@ -12,9 +14,18 @@ package Entidades;
 public class InformeGlobal {
     private long id;
     private String descripcion;
+    private ArrayList<Secretariado> secretariados = new ArrayList<Secretariado>();
 
     public long getId() {
         return id;
+    }
+
+    public void setSecretariados(ArrayList<Secretariado> secretariados) {
+        this.secretariados = secretariados;
+    }
+
+    public ArrayList<Secretariado> getSecretariados() {
+        return secretariados;
     }
 
     public String getDescripcion() {

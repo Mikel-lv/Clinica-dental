@@ -49,11 +49,28 @@ public class Pago {
         this.metodoPago = metodoPago;
     }
 
-    public Pago() {
+    public Pago (Pago e) {
+        this.importe=e.importe;
+        this.fechaPago=e.fechaPago;
+        this.id=e.id;
+        this.metodoPago=e.metodoPago;
+           
+    }
+
+    public Pago(long id, Date fechaPago, double importe) {
+        this.id = id;
+        this.fechaPago = fechaPago;
+        this.importe = importe;
+        
+    }
+    
+
+    
     }
     
     
     
     
+    
           
-}
+

@@ -9,6 +9,26 @@ package Entidades;
  *
  * @author Mikel
  */
-public class Revision {
+public class Revision extends Cita {
     private String anotacion;
+
+    
+    
+    
+    
+    public Revision() {
+        super();
+    }
+
+    
+    public String getAnotacion() {
+        return anotacion;
+    }
+
+    public void setAnotacion(String anotacion) {
+        this.anotacion = anotacion;
+    }
+    
+    
+    
 }

@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,7 +19,9 @@ public class Tratamiento {
     private boolean consentimiento;
     private Cobro cobro;
     private InformeGlobal informeGlobal;
-
+    private ArrayList<Cita> citas = new ArrayList<Cita>();
+    
+    
     public Tratamiento() {
     }
 

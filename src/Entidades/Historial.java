@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sebas
@@ -12,8 +14,18 @@ package Entidades;
 public class Historial {
     private long nºhistorial;
     private String descripción;
+    private ArrayList<Alergia> alergias = new ArrayList<Alergia>();
     
     //Getters y Setters
+
+    public ArrayList<Alergia> getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(ArrayList<Alergia> alergias) {
+        this.alergias = alergias;
+    }
+    
     public long getNºhistorial() {
         return nºhistorial;
     }
@@ -41,4 +53,5 @@ public class Historial {
     }
     
 
+    
 }

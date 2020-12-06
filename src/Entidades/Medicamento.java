@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sebas
@@ -16,7 +18,16 @@ public class Medicamento {
     private String nombre;
     private String principioactivo;
     private int sosismaxima;
+    private ArrayList<Cita> citas = new ArrayList<Cita>();
 
+    public ArrayList<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<Cita> citas) {
+        this.citas = citas;
+    }
+    
     public long getId() {
         return id;
     }

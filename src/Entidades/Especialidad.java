@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sebas
@@ -13,7 +15,16 @@ public class Especialidad {
     
     private long id;
     private String nombre;
+     private ArrayList<Cirujano> cirujanos = new ArrayList<Cirujano>();
 
+    public ArrayList<Cirujano> getCirujanos() {
+        return cirujanos;
+    }
+
+    public void setCirujanos(ArrayList<Cirujano> cirujanos) {
+        this.cirujanos = cirujanos;
+    }
+    
     public long getId() {
         return id;
     }

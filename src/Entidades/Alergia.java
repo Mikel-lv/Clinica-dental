@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author sebas
@@ -13,7 +15,25 @@ public class Alergia {
     
     private long id;
     private String nombre;
+    private Medicamento medicamento;
+    private ArrayList<Historial> historiales = new ArrayList<Historial>();
 
+    public Medicamento getMedicamento() {
+        return medicamento;
+    }
+
+    public void setMedicamento(Medicamento medicamento) {
+        this.medicamento = medicamento;
+    }
+    
+    public ArrayList<Historial> getHistoriales() {
+        return historiales;
+    }
+
+    public void setHistoriales(ArrayList<Historial> historiales) {
+        this.historiales = historiales;
+    }
+ 
     public long getId() {
         return id;
     }

@@ -5,8 +5,6 @@
  */
 package Entidades;
 
-import java.util.Scanner;
-
 /**
  *
  * @author sebas
@@ -42,10 +40,5 @@ public class Historial {
         this.descripción = descripción;
     }
     
-     //Constructor de copia
-    public Historial(Historial e){
-        this.nºhistorial = e.nºhistorial;
-        this.descripción = e.descripción;
-    }
 
 }

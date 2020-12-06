@@ -16,6 +16,11 @@ public class Cita {
     protected char rango_horario;
     protected Time hora;
 
+    public Cita() {
+    }
+
+    
+    
     
     
     

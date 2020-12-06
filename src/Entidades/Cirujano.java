@@ -5,11 +5,15 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author AGuadix
  */
 public class Cirujano extends Empleado{
+    
+    private ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>();
     
     
     //Constructor por defecto con llamada a la superclase

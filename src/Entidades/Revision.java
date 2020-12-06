@@ -11,7 +11,7 @@ package Entidades;
  */
 public class Revision extends Cita {
     private String anotacion;
-
+    private Cirujano cirujano;
     
     
     
@@ -21,7 +21,14 @@ public class Revision extends Cita {
         super();
     }
 
-    
+    public Cirujano getCirujano() {
+        return cirujano;
+    }
+
+    public void setCirujano(Cirujano cirujano) {
+        this.cirujano = cirujano;
+    }
+   
     public String getAnotacion() {
         return anotacion;
     }

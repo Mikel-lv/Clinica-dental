@@ -5,12 +5,15 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author AGuadix
  */
 public class Secretariado extends Empleado {
     private int experiencia;
+    private ArrayList<InformeGlobal> informesglobales = new ArrayList<InformeGlobal>();
 
     //Getters & Setters
     public int getExperiencia() {
@@ -20,6 +23,15 @@ public class Secretariado extends Empleado {
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
     }
+
+    public ArrayList<InformeGlobal> getInformesglobales() {
+        return informesglobales;
+    }
+
+    public void setInformesglobales(ArrayList<InformeGlobal> informesglobales) {
+        this.informesglobales = informesglobales;
+    }
+    
     
     //Constructor por defecto (Haciendo llamada a la superclase al ser una subclase)
     public Secretariado(){

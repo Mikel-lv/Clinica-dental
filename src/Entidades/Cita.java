@@ -6,6 +6,7 @@
 package Entidades;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.ArrayList;
 /**
  *
  * @author Mikel
@@ -15,8 +16,33 @@ public class Cita {
     protected Date fecha;
     protected char rango_horario;
     protected Time hora;
-
+    protected Secretariado secretariado;
+    private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
+    
+    
+    
+    
+    
     public Cita() {
+    }
+
+    public ArrayList<Medicamento> getMedicamentos() {
+        return medicamentos;
+    }
+
+    public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
+        this.medicamentos = medicamentos;
+    }
+
+    
+          
+    
+    public Secretariado getSecretariado() {
+        return secretariado;
+    }
+
+    public void setSecretariado(Secretariado secretariado) {
+        this.secretariado = secretariado;
     }
 
     

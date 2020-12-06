@@ -16,6 +16,12 @@ public class Paciente {
     private String direccion;
     private String DNI;
 
+    public Paciente() {
+    }
+
+    
+    
+    
     
     
     public long getId() {

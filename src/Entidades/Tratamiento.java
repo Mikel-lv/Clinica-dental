@@ -17,6 +17,10 @@ public class Tratamiento {
     private Date fecha_inicio;
     private boolean consentimiento;
 
+    public Tratamiento() {
+    }
+
+    
     
     
     public long getId() {

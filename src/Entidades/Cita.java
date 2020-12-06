@@ -17,10 +17,7 @@ public class Cita {
     protected char rango_horario;
     protected Time hora;
     protected Secretariado secretariado;
-    private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
-    
-    
-    
+    protected ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
     
     
     public Cita() {

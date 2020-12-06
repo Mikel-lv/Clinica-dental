@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Mikel
@@ -15,12 +17,40 @@ public class Paciente {
     private String apellidos;
     private String direccion;
     private String DNI;
-
+    private ArrayList<Tratamiento> tratamientos = new ArrayList<Tratamiento>();
+    private ArrayList<Cita> citas = new ArrayList<Cita>();
+    private Historial historial;
+    
     public Paciente() {
     }
 
-       
+    public Historial getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(Historial historial) {
+        this.historial = historial;
+    }
+
     
+    
+    public ArrayList<Tratamiento> getTratamientos() {
+        return tratamientos;
+    }
+
+    public void setTratamientos(ArrayList<Tratamiento> tratamientos) {
+        this.tratamientos = tratamientos;
+    }
+
+    public ArrayList<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<Cita> citas) {
+        this.citas = citas;
+    }
+
+       
     
     
     public long getId() {

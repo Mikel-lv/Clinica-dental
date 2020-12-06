@@ -16,8 +16,26 @@ public class Tratamiento {
     private String nombre_descriptivo;
     private Date fecha_inicio;
     private boolean consentimiento;
+    private Cobro cobro;
+    private InformeGlobal informeGlobal;
 
     public Tratamiento() {
+    }
+
+    public Cobro getCobro() {
+        return cobro;
+    }
+
+    public void setCobro(Cobro cobro) {
+        this.cobro = cobro;
+    }
+
+    public InformeGlobal getInformeGlobal() {
+        return informeGlobal;
+    }
+
+    public void setInformeGlobal(InformeGlobal informeGlobal) {
+        this.informeGlobal = informeGlobal;
     }
 
     

@@ -15,11 +15,21 @@ public class Pago {
     private long id;
     private Date fechaPago;
     private double importe;
-    private String metodoPago;
+    private String metodoPago; 
+    private Cobro cobro;
 
     public long getId() {
         return id;
     }
+
+    public Cobro getCobro() {
+        return cobro;
+    }
+
+    public void setCobro(Cobro cobro) {
+        this.cobro = cobro;
+    }
+    
 
     public Date getFechaPago() {
         return fechaPago;

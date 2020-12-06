@@ -14,6 +14,14 @@ import java.util.ArrayList;
 public class Cirujano extends Empleado{
     
     private ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>();
+
+    public ArrayList<Especialidad> getEspecialidades() {
+        return especialidades;
+    }
+
+    public void setEspecialidades(ArrayList<Especialidad> especialidades) {
+        this.especialidades = especialidades;
+    }
     
     
     //Constructor por defecto con llamada a la superclase

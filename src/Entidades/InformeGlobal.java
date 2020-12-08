@@ -14,19 +14,21 @@ import java.util.ArrayList;
 public class InformeGlobal {
     private long id;
     private String descripcion;
-    private ArrayList<Secretariado> secretariados = new ArrayList<Secretariado>();
+    private ArrayList<Secretariado> secretarios = new ArrayList<Secretariado>();
 
     public long getId() {
         return id;
     }
 
-    public void setSecretariados(ArrayList<Secretariado> secretariados) {
-        this.secretariados = secretariados;
+    public ArrayList<Secretariado> getSecretarios() {
+        return secretarios;
     }
 
-    public ArrayList<Secretariado> getSecretariados() {
-        return secretariados;
+    public void setSecretarios(ArrayList<Secretariado> secretarios) {
+        this.secretarios = secretarios;
     }
+
+    
 
     public String getDescripcion() {
         return descripcion;
@@ -42,6 +44,18 @@ public class InformeGlobal {
 
     public InformeGlobal() {
     }
+
+    public InformeGlobal(long id, String descripcion, ArrayList<Secretariado> secretarios) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.secretarios = secretarios;
+    }
+    public InformeGlobal(InformeGlobal e) {
+        this.id = e.id;
+        this.descripcion = e.descripcion;
+        this.secretarios = e.secretarios;
+    }
+    
     
     
     

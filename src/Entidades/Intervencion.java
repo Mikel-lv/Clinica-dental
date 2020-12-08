@@ -15,11 +15,11 @@ import java.util.ArrayList;
  */
 public class Intervencion extends Cita {
     private int duracion;
-    private ArrayList<Enfermeria> enfermarias = new ArrayList<Enfermeria>();
+    private ArrayList<Enfermeria> enfermeros = new ArrayList<Enfermeria>();
     private ArrayList<Cirujano> cirujanos = new ArrayList<Cirujano>();
 
     public void setEnfermarias(ArrayList<Enfermeria> enfermarias) {
-        this.enfermarias = enfermarias;
+        this.enfermeros = enfermeros;
     }
 
     public void setCirujanos(ArrayList<Cirujano> cirujanos) {
@@ -47,7 +47,7 @@ public class Intervencion extends Cita {
     }
 
     public ArrayList<Enfermeria> getEnfermarias() {
-        return enfermarias;
+        return enfermeros;
     }
 
     public ArrayList<Cirujano> getCirujanos() {
@@ -75,9 +75,48 @@ public class Intervencion extends Cita {
         this.duracion = duracion;
     }
 
+  
+
+    public ArrayList<Enfermeria> getEnfermeros() {
+        return enfermeros;
+    }
+
+    public Secretariado getSecretariado() {
+        return secretariado;
+    }
+
+    public ArrayList<Medicamento> getMedicamentos() {
+        return medicamentos;
+    }
+
+    public void setEnfermeros(ArrayList<Enfermeria> enfermeros) {
+        this.enfermeros = enfermeros;
+    }
+
+    public void setSecretariado(Secretariado secretariado) {
+        this.secretariado = secretariado;
+    }
+
+    public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
+        this.medicamentos = medicamentos;
+    }
+    
+    
     public Intervencion() {
     super();
     }
+
+    public Intervencion(int duracion, ArrayList<Enfermeria> enfermeros ,ArrayList<Cirujano> cirujanos ) {
+    super();   
+        this.duracion = duracion;
+        this.enfermeros = enfermeros;
+        this.cirujanos = cirujanos;
+        
+     
+        
+    }
+    
+    
     
     
 }

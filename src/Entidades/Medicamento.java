@@ -17,9 +17,23 @@ public class Medicamento {
     private long id;
     private String nombre;
     private String principioactivo;
-    private int sosismaxima;
+    private int dosismaxima;
     private ArrayList<Cita> citas = new ArrayList<Cita>();
+    
+    public Medicamento () {
+    super ();
+  } 
+    
+     public Medicamento (Medicamento k){
+     this.citas = k.citas;
+     this.id = k.id;
+     this.nombre = k.nombre;
+     this.principioactivo = k.principioactivo;
+     this.dosismaxima = k.dosismaxima;
+     }
 
+     
+     
     public ArrayList<Cita> getCitas() {
         return citas;
     }
@@ -52,24 +66,20 @@ public class Medicamento {
         this.principioactivo = principioactivo;
     }
 
-    public int getSosismaxima() {
-        return sosismaxima;
+    public int getDosismaxima() {
+        return dosismaxima;
     }
 
-    public void setSosismaxima(int sosismaxima) {
-        this.sosismaxima = sosismaxima;
+    public void setDosismaxima(int dosismaxima) {
+        this.dosismaxima = dosismaxima;
     }
     
-    
-    public Medicamento (){
-    
-    }
-
-    public Medicamento(long id, String nombre, String principioactivo, int sosismaxima) {
+    public Medicamento(long id, String nombre, String principioactivo, int dosismaxima,ArrayList<Cita> citas) {
         this.id = id;
         this.nombre = nombre;
         this.principioactivo = principioactivo;
-        this.sosismaxima = sosismaxima;
+        this.dosismaxima = dosismaxima;
+        this.citas = citas;
     }
     
     

@@ -17,6 +17,18 @@ public class Especialidad {
     private String nombre;
      private ArrayList<Cirujano> cirujanos = new ArrayList<Cirujano>();
 
+    public Especialidad () {
+    super ();
+  }  
+     
+   public Especialidad (Especialidad g){
+   this.cirujanos = g.cirujanos;
+   this.id = g.id;
+   this.nombre = g.nombre;
+   }  
+    
+   
+     
     public ArrayList<Cirujano> getCirujanos() {
         return cirujanos;
     }
@@ -40,14 +52,11 @@ public class Especialidad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public Especialidad () {
-    
-    }
-
-    public Especialidad(long id, String nombre) {
+   
+    public Especialidad(long id, String nombre,ArrayList<Cirujano> cirujanos) {
         this.id = id;
         this.nombre = nombre;
+        this.cirujanos = cirujanos;
     }
     
     

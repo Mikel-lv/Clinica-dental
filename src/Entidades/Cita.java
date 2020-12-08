@@ -78,7 +78,25 @@ public class Cita {
     public void setHora(Time hora) {
         this.hora = hora;
     }
+
     
     
+    public Cita(Cita c){
+    this.id = c.id;
+    this.fecha = c.fecha;
+    this.rango_horario = c.rango_horario;
+    this.hora = c.hora;
+    this.secretariado = c.secretariado;
+    this.medicamentos = c.medicamentos;
+    }
+    
+    
+    public Cita(long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado) {
+        this.id = id;
+        this.fecha = fecha;
+        this.rango_horario = rango_horario;
+        this.hora = hora;
+        this.secretariado = secretariado;
+    }
     
 }

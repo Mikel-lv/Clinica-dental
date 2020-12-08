@@ -42,7 +42,18 @@ public class Cobro {
 
     public Cobro() {
     }
-   
+
+    public Cobro(long id, double importe, Date fechaFin) {
+        this.id = id;
+        this.importe = importe;
+        this.fechaFin = fechaFin;
+    }
+   public Cobro(Cobro e) {
+        this.id = e.id;
+        this.importe = e.importe;
+        this.fechaFin = e.fechaFin;
+    }
+    
     
             
     

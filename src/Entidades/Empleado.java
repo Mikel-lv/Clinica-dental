@@ -70,8 +70,18 @@ public class Empleado {
     public Empleado() {
     }
     
+    //Constructor con todos los atributos
+    public Empleado(long id, String nombre, String apellidos, String tlfcontacto, String NIF, String direccion){    
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.tlfcontacto = tlfcontacto;
+        this.NIF = NIF;
+        this.direccion = direccion;
+    }
+
     //Constructor de copia
-    public Empleado(Empleado e){
+    public Empleado(Empleado e) {
         this.id = e.id;
         this.nombre = e.nombre;
         this.apellidos = e.apellidos;

@@ -21,9 +21,37 @@ public class Paciente {
     private ArrayList<Cita> citas = new ArrayList<Cita>();
     private Historial historial;
     
+    
+    
+    
     public Paciente() {
     }
 
+    
+    
+    public Paciente(Paciente p){
+    this.id = p.id;
+    this.nombre = p.nombre;
+    this.apellidos = p.apellidos;
+    this.direccion = p.direccion;
+    this.DNI = p.DNI;
+    this.tratamientos = p.tratamientos;
+    this.citas = p.citas;
+    this.historial = p.historial;
+    }
+
+    public Paciente(long id, String nombre, String apellidos, String direccion, String DNI, Historial historial) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.DNI = DNI;
+        this.historial = historial;
+    }
+   
+    
+    
+    
     public Historial getHistorial() {
         return historial;
     }

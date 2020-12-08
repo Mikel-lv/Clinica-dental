@@ -25,6 +25,28 @@ public class Tratamiento {
     public Tratamiento() {
     }
 
+    
+    public Tratamiento(Tratamiento t){
+    this.id = t.id;
+    this.nombre_descriptivo = t.nombre_descriptivo;
+    this.fecha_inicio = t.fecha_inicio;
+    this.consentimiento = t.consentimiento;
+    this.cobro = t.cobro;
+    this.informeGlobal = t.informeGlobal;
+    this.citas = t.citas;
+    }
+
+    public Tratamiento(long id, String nombre_descriptivo, Date fecha_inicio, boolean consentimiento, Cobro cobro, InformeGlobal informeGlobal) {
+        this.id = id;
+        this.nombre_descriptivo = nombre_descriptivo;
+        this.fecha_inicio = fecha_inicio;
+        this.consentimiento = consentimiento;
+        this.cobro = cobro;
+        this.informeGlobal = informeGlobal;
+    }
+   
+    
+    
     public Cobro getCobro() {
         return cobro;
     }
@@ -41,8 +63,6 @@ public class Tratamiento {
         this.informeGlobal = informeGlobal;
     }
 
-    
-    
     
     public long getId() {
         return id;

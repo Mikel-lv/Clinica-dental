@@ -34,6 +34,12 @@ public class Enfermeria extends Empleado{
 
     //Constructor de copia
     public Enfermeria(Enfermeria e) {
+        this.NIF = e.NIF;
+        this.apellidos = e.apellidos;
+        this.direccion = e.direccion;
+        this.id = e.id;
+        this.nombre = e.nombre;
+        this.tlfcontacto = e.tlfcontacto;
         this.categoria = e.categoria;
     }
 }

@@ -77,29 +77,20 @@ public class Intervencion extends Cita {
 
   
 
-    public ArrayList<Enfermeria> getEnfermeros() {
-        return enfermeros;
-    }
+    
 
     public Secretariado getSecretariado() {
         return secretariado;
     }
 
-    public ArrayList<Medicamento> getMedicamentos() {
-        return medicamentos;
-    }
+    
 
-    public void setEnfermeros(ArrayList<Enfermeria> enfermeros) {
-        this.enfermeros = enfermeros;
-    }
+    
 
     public void setSecretariado(Secretariado secretariado) {
         this.secretariado = secretariado;
     }
 
-    public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
-        this.medicamentos = medicamentos;
-    }
     
     
     public Intervencion() {
@@ -112,11 +103,36 @@ public class Intervencion extends Cita {
         this.enfermeros = enfermeros;
         this.cirujanos = cirujanos;
         
-     
+    
+    }
+
+    public Intervencion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public Intervencion(int duracion, long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado, ArrayList<Enfermeria> enfermeros ,ArrayList<Cirujano> cirujanos) {
+        super(id, fecha, rango_horario, hora, secretariado);
+        this.duracion = duracion;
+        this.cirujanos = cirujanos;
+        this.enfermeros = enfermeros;
+    }
+
+    public Intervencion(Intervencion e) {
+        this.duracion = e.duracion;
+        this.cirujanos = e.cirujanos;
+        this.enfermeros = e.enfermeros;
+        this.id = e.id;
+        this.fecha = e.fecha;
+        this.rango_horario = e.rango_horario;
+        this.hora = e.hora;
+        this.secretariado = e.secretariado;
+        
+        
         
     }
     
-    
+        
+      
     
     
 }

@@ -26,8 +26,14 @@ public class Enfermeria extends Empleado{
         super();
     }
     
+    //Constructor con todos los atributos
+    public Enfermeria(char categoria, long id, String nombre, String apellidos, String tlfcontacto, String NIF, String direccion){    
+        super(id, nombre, apellidos, tlfcontacto, NIF, direccion);
+        this.categoria = categoria;
+    }
+
     //Constructor de copia
-    public Enfermeria(Enfermeria e){
+    public Enfermeria(Enfermeria e) {
         this.categoria = e.categoria;
     }
 }

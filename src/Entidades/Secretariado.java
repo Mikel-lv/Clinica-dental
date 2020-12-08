@@ -37,6 +37,12 @@ public class Secretariado extends Empleado {
     public Secretariado(){
         super();
     }
+    //Constructor con todos los atributos
+
+    public Secretariado(int experiencia, long id, String nombre, String apellidos, String tlfcontacto, String NIF, String direccion) {
+        super(id, nombre, apellidos, tlfcontacto, NIF, direccion);
+        this.experiencia = experiencia;
+    }
     
     //Constructor de copia
     

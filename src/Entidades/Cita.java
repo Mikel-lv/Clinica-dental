@@ -7,6 +7,7 @@ package Entidades;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  *
  * @author Mikel
@@ -98,5 +99,22 @@ public class Cita {
         this.hora = hora;
         this.secretariado = secretariado;
     }
+    
+    
+    
+        public static Cita nuevaCita(){
+        Cita nuevaCita = new Cita();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el ID");
+        nuevaCita.setId(in.nextInt());
+//        System.out.println("Introduce la fecha");
+//        nuevaCita.setFecha(in.nextLine());
+//        System.out.println("Introduce el rango horario");
+//        nuevaCita.setRango_horario(in.nextChar());
+//        System.out.println("Introduce la hora");
+//        nuevaCita.setHora(in.nextTime());
+        return nuevaCita;
+    }
+    
     
 }

@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.Scanner;
+
 /**
  *
  * @author AGuadix
@@ -41,5 +43,13 @@ public class Enfermeria extends Empleado{
         this.nombre = e.nombre;
         this.tlfcontacto = e.tlfcontacto;
         this.categoria = e.categoria;
+    }
+    public static Enfermeria nuevoEnfermeria(){
+        Enfermeria nuevoEnfermeria = new Enfermeria();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce la categoria");
+        //nuevoEnfermeria.setCategoria(in.next());   "¿Qué metodo hay que poner para que recoga un char?"
+        
+        return nuevoEnfermeria;
     }
 }

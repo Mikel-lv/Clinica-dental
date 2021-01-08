@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -56,5 +57,14 @@ public class Secretariado extends Empleado {
         this.nombre = s.nombre;
         this.tlfcontacto= s.tlfcontacto;
         this.experiencia = s.experiencia;
+    }
+    //Metodo para crear un nuevoSecreatiado "¿Hay que añadir también los atributos de la superclase?"
+    public static Secretariado nuevoSecretariado(){
+        Secretariado nuevoSecretariado = new Secretariado();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce la experiencia");
+        nuevoSecretariado.setExperiencia(in.nextInt());
+        
+        return nuevoSecretariado;
     }
 }

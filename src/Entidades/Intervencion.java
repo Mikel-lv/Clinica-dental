@@ -8,6 +8,7 @@ package Entidades;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -126,13 +127,15 @@ public class Intervencion extends Cita {
         this.rango_horario = e.rango_horario;
         this.hora = e.hora;
         this.secretariado = e.secretariado;
-        
-        
-        
+               
     }
     
-        
-      
-    
-    
+     public static Intervencion nuevoIntervencion(){
+        Intervencion n = new Intervencion(); 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce la duración de la intervención: ");
+        n.setId (in.nextInt());
+        return n;
+          
+    }
 }

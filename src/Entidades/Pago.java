@@ -5,7 +5,9 @@
  */
 package Entidades;
 
+import static java.lang.System.in;
 import java.sql.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -64,8 +66,14 @@ public class Pago {
         this.fechaPago=e.fechaPago;
         this.id=e.id;
         this.metodoPago=e.metodoPago;
+        
            
     }
+
+    public Pago() {
+    }
+    
+    
 
     public Pago(long id, Date fechaPago, double importe) {
         this.id = id;
@@ -74,7 +82,22 @@ public class Pago {
         
     }
     
-
+        public static Pago nuevoPago(){
+        Pago nuevoPago = new Pago(); 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Intrudce el Id del pago:");
+        nuevoPago.setId (in.nextInt());
+        System.out.println("Introduce la fecha del pago:");
+        // fecha = next?
+        System.out.println("Introduce el importe:");
+        nuevoPago.setImporte(in.nextDouble());
+        System.out.println("Introduce el método de pago:");
+         //Metdodo pago  (char) = next?
+                     
+                return nuevoPago;
+         
+    }
+    
     
     }
     

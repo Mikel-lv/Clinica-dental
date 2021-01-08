@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -56,7 +57,17 @@ public class InformeGlobal {
         this.secretarios = e.secretarios;
     }
     
-    
+     public static InformeGlobal InformeGlobal(){
+        InformeGlobal nuevoInformeGlobal = new InformeGlobal(); 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el Id:");
+        nuevoInformeGlobal.setId(in.nextInt()); 
+        System.out.println("Introduce una descripción:");
+        nuevoInformeGlobal.setDescripcion (in.nextLine ());
+        return nuevoInformeGlobal;
+       
+         
+    }
     
     
 }

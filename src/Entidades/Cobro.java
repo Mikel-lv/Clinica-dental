@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.sql.Date;
+import java.util.Scanner;
 
 /**
  *
@@ -54,7 +55,19 @@ public class Cobro {
         this.fechaFin = e.fechaFin;
     }
     
+     public static Cobro nuevoCobro(){
+        Cobro nuevoCobro = new Cobro(); 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Intrudce el Id del cobro:");
+        nuevoCobro.setId (in.nextInt());
+        System.out.println("Introduce la fecha fin del cobro:");
+        // fecha = next?
+        System.out.println("Introduce el importe:");
+        nuevoCobro.setImporte(in.nextDouble());
     
+        return nuevoCobro;
+         
+    }
             
     
 }

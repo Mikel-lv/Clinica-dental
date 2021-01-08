@@ -5,6 +5,8 @@
  */
 package Entidades;
 
+import java.util.Scanner;
+
 /**
  *
  * @author AGuadix
@@ -88,5 +90,24 @@ public class Empleado {
         this.tlfcontacto = e.tlfcontacto;
         this.NIF = e.NIF;
         this.direccion = e.direccion;
+    }
+    
+    public static Empleado nuevoEmpleado(){
+        Empleado nuevoEmpleado = new Empleado();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el ID");
+        nuevoEmpleado.setId(in.nextInt());
+        in.nextLine();
+        System.out.println("Introduce el nombre");
+        nuevoEmpleado.setNombre(in.nextLine());
+        System.out.println("Introduce el apellido");
+        nuevoEmpleado.setApellidos(in.nextLine());
+        System.out.println("Introduce el telefono de contacto");
+        nuevoEmpleado.setTlfcontacto(in.nextLine());
+        System.out.println("Introduce el NIF");
+        nuevoEmpleado.setNIF(in.nextLine());
+        System.out.println("Introduce la direccion");
+        nuevoEmpleado.setDireccion(in.nextLine());
+        return nuevoEmpleado;
     }
 }

@@ -7,6 +7,7 @@ package Entidades;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -97,5 +98,18 @@ public class Tratamiento {
     }
     
     
+        public static Tratamiento nuevoTratamiento(){
+        Tratamiento nuevoTratamiento = new Tratamiento();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el ID");
+        nuevoTratamiento.setId(in.nextInt());
+        System.out.println("Introduce el nombre descriptivo");
+        nuevoTratamiento.setNombre_descriptivo(in.nextLine());
+//        System.out.println("Introduce la fecha");   
+//        nuevoTratamiento.setFecha_inicio(in.ne));
+        System.out.println("¿Da su consentimiento?");
+        nuevoTratamiento.setConsentimiento(in.nextBoolean());
+        return nuevoTratamiento;
+        
+        }
 }
-

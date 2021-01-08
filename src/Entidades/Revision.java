@@ -7,6 +7,7 @@ package Entidades;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Scanner;
 
 /**
  *
@@ -61,5 +62,15 @@ public class Revision extends Cita {
     public void setAnotacion(String anotacion) {
         this.anotacion = anotacion;
     }
+    
+    
+        public static Revision nuevaRevision(){
+        Revision nuevaRevision = new Revision();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce una anotacion");
+        nuevaRevision.setAnotacion(in.nextLine());
+        return nuevaRevision;
+    }
+    
     
 }

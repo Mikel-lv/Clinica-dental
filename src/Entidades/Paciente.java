@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -121,5 +122,25 @@ public class Paciente {
         this.DNI = DNI;
     }
     
+    
+    
+    
+    public static Paciente nuevoPaciente(){
+        Paciente nuevoPaciente = new Paciente();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el ID");
+        nuevoPaciente.setId(in.nextInt());
+        System.out.println("Introduce el nombre");
+        nuevoPaciente.setNombre(in.nextLine());
+        System.out.println("Introduce el apellido");
+        nuevoPaciente.setApellidos(in.nextLine());
+        System.out.println("Introduce la direccion");
+        nuevoPaciente.setDireccion(in.nextLine());
+        System.out.println("Introduce el DNI");
+        nuevoPaciente.setDNI(in.nextLine());
+//        System.out.println("Introduce el historial");     Nose que in. poner
+//        nuevoPaciente.setHistorial(in.nextLine());
+        return nuevoPaciente;
+    }
 }
 

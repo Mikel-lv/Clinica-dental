@@ -17,7 +17,25 @@ public class Alergia {
     private String nombre;
     private Medicamento medicamento;
     private ArrayList<Historial> historiales = new ArrayList<Historial>();
+    
+  public Alergia () {
+      super ();
+  }
+    
+    public Alergia (Alergia t){
+    this.historiales = t.historiales;
+    this.id = t.id;
+    this.nombre = t.nombre;
+    this.medicamento = t.medicamento;
+    }
 
+    public Alergia(long id, String nombre, Medicamento medicamento, ArrayList<Historial> historiales) {
+        this.id = id;
+        this.nombre = nombre;
+        this.medicamento = medicamento;
+        this.historiales = historiales;  
+    }
+    
     public Medicamento getMedicamento() {
         return medicamento;
     }
@@ -50,17 +68,12 @@ public class Alergia {
         this.nombre = nombre;
     }
     
-    public Alergia () {
-       
-}
-
     public Alergia(long id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
     
-    
-    
+   
     
     
 }

@@ -17,7 +17,19 @@ public class Historial {
     private ArrayList<Alergia> alergias = new ArrayList<Alergia>();
     
     //Getters y Setters
-
+    
+     public Historial () {
+      super ();
+  }
+    
+     public Historial (Historial f){
+     this.alergias = f.alergias;
+     this.descripción = f.descripción;
+     this.nºhistorial = f.nºhistorial;     
+     }
+     
+     
+     
     public ArrayList<Alergia> getAlergias() {
         return alergias;
     }
@@ -42,14 +54,12 @@ public class Historial {
         this.descripción = descripción;
     }
     
-    //Constructor por defecto
-    public Historial () {
-    }
     
-    //Constructres
-    public Historial(long nºhistorial, String descripción) {
+
+    public Historial(long nºhistorial, String descripción, ArrayList<Alergia> alergias) {
         this.nºhistorial = nºhistorial;
         this.descripción = descripción;
+        this.alergias = alergias;
     }
     
 

@@ -20,6 +20,8 @@ public class Pago {
     private String metodoPago; 
     private Cobro cobro;
 
+    
+
     public long getId() {
         return id;
     }
@@ -72,6 +74,14 @@ public class Pago {
 
     public Pago() {
     }
+
+    public Pago(long id, Date fechaPago, double importe, String metodoPago, Cobro cobro) {
+        this.id = id;
+        this.fechaPago = fechaPago;
+        this.importe = importe;
+        this.metodoPago = metodoPago;
+        this.cobro = cobro;
+    }
     
     
 
@@ -86,16 +96,14 @@ public class Pago {
         Pago nuevoPago = new Pago(); 
         Scanner in = new Scanner(System.in);
         System.out.println("Intrudce el Id del pago:");
-        nuevoPago.setId (in.nextInt());
-        System.out.println("Introduce la fecha del pago:");
-        // fecha = next?
+        nuevoPago.setId (in.nextInt());   
+        //PREGUNTAR PARA PONER LA FECHA
         System.out.println("Introduce el importe:");
         nuevoPago.setImporte(in.nextDouble());
         System.out.println("Introduce el método de pago:");
-         //Metdodo pago  (char) = next?
+        char sector = in.nextLine().charAt(0);
                      
-                return nuevoPago;
-         
+                return nuevoPago;         
     }
     
     

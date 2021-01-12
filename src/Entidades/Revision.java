@@ -44,7 +44,6 @@ public class Revision extends Cita {
     }
     
     
-    
        
     
     public Cirujano getCirujano() {
@@ -62,7 +61,14 @@ public class Revision extends Cita {
     public void setAnotacion(String anotacion) {
         this.anotacion = anotacion;
     }
+
+    @Override
+    public String toString() {
+        return "Revision{" + "anotacion=" + anotacion + ", cirujano=" + cirujano + '}';
+    }
     
+    
+       
     
         public static Revision nuevaRevision(){
         Revision nuevaRevision = new Revision();

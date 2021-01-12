@@ -91,6 +91,12 @@ public class Empleado {
         this.NIF = e.NIF;
         this.direccion = e.direccion;
     }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", tlfcontacto=" + tlfcontacto + ", NIF=" + NIF + ", direccion=" + direccion + '}';
+    }
+    
     
     public static Empleado nuevoEmpleado(){
         Empleado nuevoEmpleado = new Empleado();

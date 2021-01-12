@@ -58,6 +58,13 @@ public class Secretariado extends Empleado {
         this.tlfcontacto= s.tlfcontacto;
         this.experiencia = s.experiencia;
     }
+
+    @Override
+    public String toString() {
+        return "Secretariado{" + "experiencia=" + experiencia + ", informesglobales=" + informesglobales + '}';
+    }
+    
+    
     //Metodo para crear un nuevoSecreatiado "¿Hay que añadir también los atributos de la superclase?"
     public static Secretariado nuevoSecretariado(){
         Secretariado nuevoSecretariado = new Secretariado();

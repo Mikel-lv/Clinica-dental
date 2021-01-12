@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Cirujano extends Empleado{
     
-    private ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>();
+    private ArrayList<Especialidad> especialidades = new ArrayList<Especialidad>(); // Acepta objetos de clase Especialidad
 
     
     //Getters y Setters

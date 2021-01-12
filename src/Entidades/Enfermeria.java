@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author AGuadix
  */
 public class Enfermeria extends Empleado{
-    private char categoria;
+    private char categoria; // Puede ser de 3 categorias, 'A', 'B' o 'C'
 
     //Getters & Setters
     public char getCategoria() {
@@ -55,7 +55,7 @@ public class Enfermeria extends Empleado{
         Enfermeria nuevoEnfermeria = new Enfermeria();
         Scanner in = new Scanner(System.in);
         System.out.println("Introduce la categoria");
-        //nuevoEnfermeria.setCategoria(in.next());   "¿Qué metodo hay que poner para que recoga un char?"
+        nuevoEnfermeria.setCategoria(in.nextLine().charAt(0));  
         
         return nuevoEnfermeria;
     }

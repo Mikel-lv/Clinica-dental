@@ -13,8 +13,8 @@ import java.util.Scanner;
  * @author AGuadix
  */
 public class Secretariado extends Empleado {
-    private int experiencia;
-    private ArrayList<InformeGlobal> informesglobales = new ArrayList<InformeGlobal>();
+    private int experiencia; // Ha de ser >=0
+    private ArrayList<InformeGlobal> informesglobales = new ArrayList<InformeGlobal>(); // Acepta objetos de clase InformeGlobal
 
     //Getters & Setters
     public int getExperiencia() {

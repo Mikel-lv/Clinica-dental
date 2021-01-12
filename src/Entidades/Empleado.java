@@ -12,12 +12,12 @@ import java.util.Scanner;
  * @author AGuadix
  */
 public class Empleado {
-    protected long id;
-    protected String nombre;
-    protected String apellidos;
-    protected String tlfcontacto;
-    protected String NIF;
-    protected String direccion;
+    protected long id; // <0 y ha de ser único
+    protected String nombre; // Máximo 20 caracteres alfanuméricos
+    protected String apellidos; // Máximo 20 caracteres alfanuméricos
+    protected String tlfcontacto; // 9 caracteres numéricos
+    protected String NIF; // 8 caracteres numéricos y 1 letra
+    protected String direccion; // Máximo 30 caracteres alfanuméricos
 
     //Getters y Setters
     public long getId() {

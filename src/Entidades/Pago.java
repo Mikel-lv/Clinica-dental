@@ -91,6 +91,13 @@ public class Pago {
         this.importe = importe;
         
     }
+
+    @Override
+    public String toString() {
+        return "Pago{" + "id=" + id + ", fechaPago=" + fechaPago + ", importe=" + importe + ", metodoPago=" + metodoPago + ", cobro=" + cobro + '}';
+    }
+    
+    
     
         public static Pago nuevoPago(){
         Pago nuevoPago = new Pago(); 

@@ -44,6 +44,13 @@ public class Cobro {
     public Cobro() {
     }
 
+    @Override
+    public String toString() {
+        return "Cobro{" + "id=" + id + ", importe=" + importe + ", fechaFin=" + fechaFin + '}';
+    }
+    
+    
+
     public Cobro(long id, double importe, Date fechaFin) {
         this.id = id;
         this.importe = importe;

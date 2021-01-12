@@ -56,6 +56,13 @@ public class InformeGlobal {
         this.descripcion = e.descripcion;
         this.secretarios = e.secretarios;
     }
+
+    @Override
+    public String toString() {
+        return "InformeGlobal{" + "id=" + id + ", descripcion=" + descripcion + ", secretarios=" + secretarios + '}';
+    }
+    
+    
     
      public static InformeGlobal InformeGlobal(){
         InformeGlobal nuevoInformeGlobal = new InformeGlobal(); 

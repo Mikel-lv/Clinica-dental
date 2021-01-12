@@ -129,6 +129,12 @@ public class Intervencion extends Cita {
         this.secretariado = e.secretariado;
                
     }
+
+    @Override
+    public String toString() {
+        return "Intervencion{" + "duracion=" + duracion + ", enfermeros=" + enfermeros + ", cirujanos=" + cirujanos + '}';
+    }
+    
     
      public static Intervencion nuevoIntervencion(){
         Intervencion n = new Intervencion(); 

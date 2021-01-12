@@ -101,24 +101,21 @@ public class Pago {
     
     
         public static Pago nuevoPago(){
-        Pago nuevoPago = new Pago(); 
+        Pago ret = new Pago(); 
         Scanner in = new Scanner(System.in);
         System.out.println("Intrudce el Id del pago:");
-        nuevoPago.setId (in.nextInt()); 
-        System.out.println("Introduce fecha:");
-        System.out.println("DD:");
-        String DD = in.nextLine();
-        System.out.println("MM:");
-        String MM = in.nextLine();
-        System.out.println("AAAA:");
-        String AAAA = in.nextLine();
-        // Date fecha = Date.valueOf(LocalDate.parse(DD +"/" + MM + "/" + AAAA, dateFormatter))
+        int identificador = in.nextInt();
+        ret.setId (in.nextInt()); 
+        System.out.println("Introduce la fecha del pago:");
+        Date fecha = Utilidades.Fecha.nuevaFecha().conversorFecha();
+        ret.setFechaPago(fecha);
         System.out.println("Introduce el importe:");
-        nuevoPago.setImporte(in.nextDouble());
+        double importe = in.nextDouble();
+        ret.setImporte(in.nextDouble());
         System.out.println("Introduce el método de pago:");
+        ret.setImporte(identificador);
         
-                     
-                return nuevoPago;         
+             return ret;         
     }
     
     

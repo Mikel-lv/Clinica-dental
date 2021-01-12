@@ -8,6 +8,7 @@ package Entidades;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 
 /**
@@ -34,7 +35,7 @@ public class Utilidades {
         
         new Pago (002, Date.valueOf(LocalDate.parse("23/12/2020", dateFormatter)), 160, "tarjeta", COBROS[0]),
         new Pago (022, Date.valueOf(LocalDate.parse("27/12/2020", dateFormatter)), 70, "metálico", COBROS[0]),
-        new Pago (030, Date.valueOf(LocalDate.parse("31/12/2020", dateFormatter)), 57.99, "transferencia", COBROS[0]), // preguntar a Luis
+        new Pago (030, Date.valueOf(LocalDate.parse("31/12/2020", dateFormatter)), 57.99, "transferencia", COBROS[0]), 
         
     };
     
@@ -42,7 +43,7 @@ public class Utilidades {
          
          
    public static final Intervencion INTERVENCIONES [] = {
-       //new Intervencion (49, ) // medir en minutos (reflejarlo en la tabla) preguntar por los ARRAYLIST
+       //new Intervencion (49, ) // medir en minutos (reflejarlo en la tabla) 
        
    };
         public static final int numIntervencion = INTERVENCIONES.length;
@@ -155,4 +156,53 @@ public class Utilidades {
 //          new Historial (57, "CCCCCC", Arraylist Cirujano),
       };
       public static final int Especialidad = ESPECIALIDADES.length;
+      
+      
+      public static class Fecha {
+          private int anio;
+          private int mes;
+          private int dia;
+          
+          public Fecha (){
+              Date hoy = Date.valueOf(LocalDate.now());
+          }
+          
+          public Fecha ( int y, int m, int d){
+              this.anio = y;
+              this.mes = m;
+              this.dia = d;                      
+          }
+          
+          public Date conversorFecha (){
+              java.sql.Date ret = new Date (this.anio, this.mes, this.dia);
+              return ret;
+          }
+          
+          public static Fecha nuevaFecha(){
+              Fecha ret = new Fecha();
+              Scanner in = new Scanner (System.in);
+              int d = 0;
+              do{
+                    System.out.println("Día: ");
+                    d = in.nextInt();
+                }   while(d<=0 || d>31);  
+              int m = 0;
+              do{
+                    System.out.println("Mes: ");
+                    d = in.nextInt();
+                }   while(m<=0 || m>12); 
+              
+              int y = 0;
+              do{
+                    System.out.println("Año: ");
+                    d = in.nextInt();
+                }   while(d<=2000);               
+                                            
+                           
+              return ret;
+              
+          }
       }
+      }
+
+

@@ -137,11 +137,12 @@ public class Intervencion extends Cita {
     
     
      public static Intervencion nuevoIntervencion(){
-        Intervencion n = new Intervencion(); 
+        Intervencion ret = new Intervencion(); 
         Scanner in = new Scanner(System.in);
-        System.out.println("Introduce la duración de la intervención: ");
-        n.setId (in.nextInt());
-        return n;
+        System.out.println("Introduce (en minutos) la duración de la intervención: ");
+        int duracion = in.nextInt();
+        ret.setId (in.nextInt());         
+        return ret;
           
     }
 }

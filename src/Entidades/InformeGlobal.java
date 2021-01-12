@@ -76,5 +76,17 @@ public class InformeGlobal {
          
     }
     
+     public static InformeGlobal nuevoInformeGlobal(){
+        InformeGlobal ret = new InformeGlobal(); 
+        Scanner in = new Scanner(System.in);
+        System.out.println("Intrudce el Id del informe:");
+        int id = in.nextInt();
+        ret.setId (in.nextInt()); 
+        System.out.println("Descripción:");
+        String descripcion = in.nextLine();
+        ret.setDescripcion(descripcion);
+                
+             return ret;         
+    }
     
 }

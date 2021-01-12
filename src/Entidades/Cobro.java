@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Cobro {
     private long id; //  VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir
     private double importe; // VALIDOS: >0 INVÁLIDOS <0 En €
-    private Date fechaFin;
+    private Date fechaFin; //NO VÁLIDAS FECHAS ANTES DEL AÑO 2000
 
     public long getId() {
         return id;
@@ -62,18 +62,23 @@ public class Cobro {
         this.fechaFin = e.fechaFin;
     }
     
+     
+     
      public static Cobro nuevoCobro(){
-        Cobro nuevoCobro = new Cobro(); 
+        Cobro ret = new Cobro(); 
         Scanner in = new Scanner(System.in);
         System.out.println("Intrudce el Id del cobro:");
-        nuevoCobro.setId (in.nextInt());
+        int identificador = in.nextInt();
+        ret.setId (in.nextInt()); 
         System.out.println("Introduce la fecha fin del cobro:");
-        // fecha = next?
+        Date fecha = Utilidades.Fecha.nuevaFecha().conversorFecha();
+        ret.setFechaFin(fecha);
         System.out.println("Introduce el importe:");
-        nuevoCobro.setImporte(in.nextDouble());
-    
-        return nuevoCobro;
-         
+        double importe = in.nextDouble();
+        ret.setImporte(in.nextDouble());
+        
+        
+             return ret;         
     }
             
     

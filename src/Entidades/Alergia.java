@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -74,6 +75,22 @@ public class Alergia {
     }
     
    
+    public static Alergia nuevoAlergia(){
+        Alergia nuevoAlergia = new Alergia();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el id");
+        nuevoAlergia.setId(in.nextInt());
+        System.out.println("Introduce el nombre");
+        nuevoAlergia.setNombre(in.nextLine());
+        return nuevoAlergia;
+    }
+
+    @Override
+    public String toString() {
+        return "Alergia{" + "id=" + id + ", nombre=" + nombre + ", medicamento=" + medicamento + ", historiales=" + historiales + '}';
+    }
+    
+    
     
     
 }

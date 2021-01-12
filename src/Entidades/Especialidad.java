@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -60,7 +61,20 @@ public class Especialidad {
     }
     
     
-    
+    public static Especialidad nuevoEspecialidad(){
+        Especialidad nuevoEspecialidad = new Especialidad();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el id");
+        nuevoEspecialidad.setId(in.nextInt());
+        System.out.println("Introduce el nombre");
+        nuevoEspecialidad.setNombre(in.nextLine());
+        return nuevoEspecialidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Especialidad{" + "id=" + id + ", nombre=" + nombre + ", cirujanos=" + cirujanos + '}';
+    }
     
     
     

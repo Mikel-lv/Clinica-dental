@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -62,6 +63,22 @@ public class Historial {
         this.alergias = alergias;
     }
     
-
+        public static Historial nuevoHistorial(){
+        Historial nuevoHistorial = new Historial();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el nºhistorial");
+        nuevoHistorial.setNºhistorial(in.nextLong());
+        System.out.println("Introduce la descripción");
+        nuevoHistorial.setDescripción(in.nextLine());
+        return nuevoHistorial;
     
+     
+}
+
+    @Override
+    public String toString() {
+        return "Historial{" + "n\u00bahistorial=" + nºhistorial + ", descripci\u00f3n=" + descripción + ", alergias=" + alergias + '}';
+    }
+        
+        
 }

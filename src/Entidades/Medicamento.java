@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -80,6 +81,25 @@ public class Medicamento {
         this.principioactivo = principioactivo;
         this.dosismaxima = dosismaxima;
         this.citas = citas;
+    }
+    
+    public static Medicamento nuevoMedicamento(){
+        Medicamento nuevoMedicamento = new Medicamento();
+        Scanner in = new Scanner(System.in);
+        System.out.println("Introduce el id");
+        nuevoMedicamento.setId(in.nextLong());
+        System.out.println("Introduce el nombre");
+        nuevoMedicamento.setNombre(in.nextLine());
+         System.out.println("Introduce el principioactivo");
+        nuevoMedicamento.setPrincipioactivo(in.nextLine());
+        System.out.println("Introduce la dosismaxima");
+        nuevoMedicamento.setDosismaxima(in.nextInt());
+        return nuevoMedicamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Medicamento{" + "id=" + id + ", nombre=" + nombre + ", principioactivo=" + principioactivo + ", dosismaxima=" + dosismaxima + ", citas=" + citas + '}';
     }
     
     

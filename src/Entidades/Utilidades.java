@@ -127,4 +127,31 @@ public class Utilidades {
       public static final int Paciente = PACIENTES.length;
       
       
-}
+        public static final Historial HISTORIALES [] = {
+//          new Historial (2, "AAAAAAA", Arraylist Alergia),
+//          new Historial (66, "BBBBBBB", Arraylist Alergia),
+//          new Historial (22458, "CCCCCC", Arraylist Alergia),
+      };
+      public static final int Historial = HISTORIALES.length;
+      
+        public static final Alergia ALERGIAS [] = {
+//          new Historial (77, "AAAAAAA","Medicamento", Arraylist Historial),
+//          new Historial (69, "BBBBBBB","Medicamento", Arraylist Historial),
+//          new Historial (885857, "CCCCCC","Medicamento", Arraylist Historial),
+      };
+      public static final int Alergia = ALERGIAS.length;
+      
+          public static final Medicamento MEDICAMENTOS [] = {
+//          new Historial (611, "AAAAAAA","Principioactivo",1, Arraylist Cita),
+//          new Historial (888, "BBBBBBB","Principioactivo",3, Arraylist Cita),
+//          new Historial (8857, "CCCCCC","Principioactivo",2, Arraylist Cita),
+      };
+      public static final int Medicamento = MEDICAMENTOS.length;
+      
+          public static final Especialidad ESPECIALIDADES [] = {
+//          new Historial (11, "AAAAAAA", Arraylist Cirujano),
+//          new Historial (8, "BBBBBBB", Arraylist Cirujano),
+//          new Historial (57, "CCCCCC", Arraylist Cirujano),
+      };
+      public static final int Especialidad = ESPECIALIDADES.length;
+      }

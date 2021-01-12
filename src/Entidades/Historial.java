@@ -13,8 +13,8 @@ import java.util.Scanner;
  * @author sebas
  */
 public class Historial {
-    private long nºhistorial;
-    private String descripción;
+    private long nºhistorial; // <0 y ha de ser único
+    private String descripción; // Máximo 40 caracteres alfanuméricos
     private ArrayList<Alergia> alergias = new ArrayList<Alergia>();
     
     //Getters y Setters

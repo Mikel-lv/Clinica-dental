@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class Especialidad {
     
-    private long id;
-    private String nombre;
+    private long id; // <0 y ha de ser único
+    private String nombre; // Máximo 20 caracteres alfanuméricos
      private ArrayList<Cirujano> cirujanos = new ArrayList<Cirujano>();
 
     public Especialidad () {

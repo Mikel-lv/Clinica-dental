@@ -13,14 +13,14 @@ import java.util.Scanner;
  * @author Mikel
  */
 public class Paciente {
-    private long id;
-    private String nombre;
-    private String apellidos;
-    private String direccion;
-    private String DNI;
+    private long id; //Validos >0, Invalidos <0, Valor unico irrepetible
+    private String nombre; //Valido <= 15 caracteres alfanumericos, invalido " "
+    private String apellidos;//Valido <= 20 caracteres alfanumericos, invalido " "
+    private String direccion; //Valido <= 40 caracteres alfanumericos, invalido " "
+    private String DNI; // 8 caracteristicas y 1 letra
     private ArrayList<Tratamiento> tratamientos = new ArrayList<Tratamiento>();
     private ArrayList<Cita> citas = new ArrayList<Cita>();
-    private Historial historial;
+    private Historial historial; // Objeto de tipo historial
     
     
     

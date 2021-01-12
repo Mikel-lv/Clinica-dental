@@ -14,12 +14,12 @@ import java.util.Scanner;
  * @author Mikel
  */
 public class Tratamiento {
-    private long id;
-    private String nombre_descriptivo;
+    private long id; //Validos >0, Invalidos <0, Valor unico irrepetible
+    private String nombre_descriptivo; //<=40 caracteres alfanumericos
     private Date fecha_inicio;
-    private boolean consentimiento;
-    private Cobro cobro;
-    private InformeGlobal informeGlobal;
+    private boolean consentimiento; //Validos : S,s, N,n, Invalidos Cualquier otro carácter !=S, s, N, s 
+    private Cobro cobro; // Objeto de tipo cobro
+    private InformeGlobal informeGlobal; // Objeto de tipo informeglobal
     private ArrayList<Cita> citas = new ArrayList<Cita>();
     
     

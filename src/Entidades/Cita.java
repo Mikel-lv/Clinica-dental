@@ -13,9 +13,9 @@ import java.util.Scanner;
  * @author Mikel
  */
 public class Cita {
-    protected long id;
+    protected long id; //Validos >0, Invalidos <0, Valor unico irrepetible
     protected Date fecha;
-    protected char rango_horario;
+    protected char rango_horario; //Validos : M, m, T, t, Invalidos Cualquier otro carácter !=M, m, t, t.
     protected Time hora;
     protected Secretariado secretariado;
     protected ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
@@ -123,12 +123,12 @@ public class Cita {
         public static Cita nuevaCita(){
         Cita nuevaCita = new Cita();
         Scanner in = new Scanner(System.in);
-        System.out.println("Introduce el ID");
-        nuevaCita.setId(in.nextInt());
+//        System.out.println("Introduce el ID");
+//        nuevaCita.setId(in.nextInt());
 //        System.out.println("Introduce la fecha");
 //        nuevaCita.setFecha(in.nextLine());
 //        System.out.println("Introduce el rango horario");
-//        nuevaCita.setRango_horario(in.nextChar());
+//        nuevaCita.setRango_horario(in.nextLine().charAt(0));
 //        System.out.println("Introduce la hora");
 //        nuevaCita.setHora(in.nextTime());
         return nuevaCita;

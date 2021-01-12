@@ -37,13 +37,14 @@ public class Tratamiento {
     this.citas = t.citas;
     }
 
-    public Tratamiento(long id, String nombre_descriptivo, Date fecha_inicio, boolean consentimiento, Cobro cobro, InformeGlobal informeGlobal) {
+    public Tratamiento(long id, String nombre_descriptivo, Date fecha_inicio, boolean consentimiento, Cobro cobro, InformeGlobal informeGlobal, ArrayList<Cita> citas) {
         this.id = id;
         this.nombre_descriptivo = nombre_descriptivo;
         this.fecha_inicio = fecha_inicio;
         this.consentimiento = consentimiento;
         this.cobro = cobro;
         this.informeGlobal = informeGlobal;
+        this.citas = citas;
     }
    
     
@@ -96,6 +97,15 @@ public class Tratamiento {
     public void setConsentimiento(boolean consentimiento) {
         this.consentimiento = consentimiento;
     }
+
+    @Override
+    public String toString() {
+        return "Tratamiento{" + "id=" + id + ", nombre_descriptivo=" + nombre_descriptivo + ", fecha_inicio=" + fecha_inicio + ", consentimiento=" + consentimiento + ", cobro=" + cobro + ", informeGlobal=" + informeGlobal + ", citas=" + citas + '}';
+    }
+    
+    
+    
+    
     
     
         public static Tratamiento nuevoTratamiento(){

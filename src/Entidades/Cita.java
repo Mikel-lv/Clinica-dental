@@ -91,7 +91,6 @@ public class Cita {
     this.medicamentos = c.medicamentos;
     }
     
-    
     public Cita(long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado) {
         this.id = id;
         this.fecha = fecha;
@@ -99,6 +98,25 @@ public class Cita {
         this.hora = hora;
         this.secretariado = secretariado;
     }
+    
+    public Cita(long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado, ArrayList<Medicamento> Medicamentos) {
+        this.id = id;
+        this.fecha = fecha;
+        this.rango_horario = rango_horario;
+        this.hora = hora;
+        this.secretariado = secretariado;
+        this.medicamentos = medicamentos;
+    }
+
+    
+    
+    
+    @Override
+    public String toString() {
+        return "Cita{" + "id=" + id + ", fecha=" + fecha + ", rango_horario=" + rango_horario + ", hora=" + hora + ", secretariado=" + secretariado + ", medicamentos=" + medicamentos + '}';
+    }
+    
+    
     
     
     

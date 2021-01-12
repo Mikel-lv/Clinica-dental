@@ -41,13 +41,15 @@ public class Paciente {
     this.historial = p.historial;
     }
 
-    public Paciente(long id, String nombre, String apellidos, String direccion, String DNI, Historial historial) {
+    public Paciente(long id, String nombre, String apellidos, String direccion, String DNI, Historial historial, ArrayList<Cita> citas, ArrayList<Tratamiento> tratamiento) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.direccion = direccion;
         this.DNI = DNI;
         this.historial = historial;
+        this.citas = citas;
+        this.tratamientos = tratamientos;
     }
    
     
@@ -120,6 +122,11 @@ public class Paciente {
 
     public void setDNI(String DNI) {
         this.DNI = DNI;
+    }
+
+    @Override
+    public String toString() {
+        return "Paciente{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", direccion=" + direccion + ", DNI=" + DNI + ", tratamientos=" + tratamientos + ", citas=" + citas + ", historial=" + historial + '}';
     }
     
     

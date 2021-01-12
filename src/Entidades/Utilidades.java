@@ -87,4 +87,44 @@ public class Utilidades {
        
    };
       public static final int Secretariado = SECRETARIADO.length;
+      
+      
+      
+      public static final Revision REVISIONES [] = {
+//          new Revision ("todo correcto", CIRUJANOS [0], 5, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'M', HORA, SECRETARIADO [0]),   NO SABEMOS PONER LA HORA
+//          new Revision ("muerto", CIRUJANOS [0], 4, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'T', HORA, SECRETARIADO [0]),
+//          new Revision ("reparar aparato", CIRUJANOS [0], 1, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'M', HORA, SECRETARIADO [0])
+      }; 
+      public static final int Revision = REVISIONES.length;
+      
+      
+      
+      
+      public static final Cita CITAS [] = {
+//          new Cita (3, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'T', HORA, SECRETARIADO [0], Arraylist medicamento)
+//          new Cita (2, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'M', HORA, SECRETARIADO [0], Arraylist medicamento)
+//          new Cita (7, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'M', HORA, SECRETARIADO [0], Arraylist medicamento)
+      };
+      public static final int Cita = CITAS.length;
+      
+      
+      
+      public static final Tratamiento TRATAMIENTOS [] = {
+//          new Tratamiento (3, "dolor de muela", Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), Y, COBROS [0], INFORMES [0], Arraylist cita)
+//          new Tratamiento (8, "empaste", Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), Y, COBROS [0], INFORMES [0], Arraylist cita)
+//          new Tratamiento (1, "extraccion", Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), N, COBROS [0], INFORMES [0], Arraylist cita)
+      };
+      public static final int Tratmamiento = TRATAMIENTOS.length;
+      
+      
+      
+      
+      public static final Paciente PACIENTES [] = {
+//          new Paciente (3, "Juan", "Gonzalez", "Calle santander 23 1ºB", "75926351K", HISTORIAL [0], Arraylist Cita, Arraylist Tratamiento)
+//          new Paciente (6, "Paula", "Univaso", "Calle la rona 2 5ºC", "47523767P", HISTORIAL [0], Arraylist Cita, Arraylist Tratamiento)
+//          new Paciente (2, "Pedro", "Martin", "Calle santander 23 1ºB", "24572357D", HISTORIAL [0], Arraylist Cita, Arraylist Tratamiento)
+      };
+      public static final int Paciente = PACIENTES.length;
+      
+      
 }

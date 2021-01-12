@@ -15,10 +15,10 @@ import java.util.Scanner;
 public class Medicamento {
     
     
-    private long id;
-    private String nombre;
-    private String principioactivo;
-    private int dosismaxima;
+    private long id; // <0 y ha de ser único
+    private String nombre; // Máximo 20 caracteres alfanuméricos
+    private String principioactivo; // Máximo 20 caracteres alfanuméricos
+    private int dosismaxima; // solo valores numericos >=0
     private ArrayList<Cita> citas = new ArrayList<Cita>();
     
     public Medicamento () {

@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Revision extends Cita {
     private String anotacion;  //<=40 caracteres alfanumericos
-    private Cirujano cirujano; // Objeto de tipo cobro
+    private Cirujano cirujano; // Objeto de tipo cirujano
     
     
     

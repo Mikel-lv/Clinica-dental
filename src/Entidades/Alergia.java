@@ -14,9 +14,9 @@ import java.util.Scanner;
  */
 public class Alergia {
     
-    private long id;
-    private String nombre;
-    private Medicamento medicamento;
+    private long id; // <0 y ha de ser único
+    private String nombre; // Máximo 20 caracteres alfanuméricos
+    private Medicamento medicamento; // Objeto de tipo medicamento
     private ArrayList<Historial> historiales = new ArrayList<Historial>();
     
   public Alergia () {

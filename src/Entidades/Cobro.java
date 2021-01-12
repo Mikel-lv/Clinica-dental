@@ -13,8 +13,8 @@ import java.util.Scanner;
  * @author punib
  */
 public class Cobro {
-    private long id;
-    private double importe;
+    private long id; //  VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir
+    private double importe; // VALIDOS: >0 INVÁLIDOS <0 En €
     private Date fechaFin;
 
     public long getId() {

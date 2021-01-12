@@ -13,8 +13,8 @@ import java.util.Scanner;
  * @author punib
  */
 public class InformeGlobal {
-    private long id;
-    private String descripcion;
+    private long id; // VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir.
+    private String descripcion; // No puede estar vacío, y tiene un mínimo de 10 carcteres.
     private ArrayList<Secretariado> secretarios = new ArrayList<Secretariado>();
 
     public long getId() {

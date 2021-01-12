@@ -7,6 +7,7 @@ package Entidades;
 
 import static java.lang.System.in;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -14,10 +15,10 @@ import java.util.Scanner;
  * @author punib
  */
 public class Pago {
-    private long id;
-    private Date fechaPago;
-    private double importe;
-    private String metodoPago; 
+    private long id; // VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir.
+    private Date fechaPago; //
+    private double importe; // VALIDOS: >0 INVÁLIDOS <0 en €
+    private String metodoPago; // VALIDOS: "metálico", "tarjeta" y "transferencia"
     private Cobro cobro;
 
     
@@ -103,12 +104,19 @@ public class Pago {
         Pago nuevoPago = new Pago(); 
         Scanner in = new Scanner(System.in);
         System.out.println("Intrudce el Id del pago:");
-        nuevoPago.setId (in.nextInt());   
-        //PREGUNTAR PARA PONER LA FECHA
+        nuevoPago.setId (in.nextInt()); 
+        System.out.println("Introduce fecha:");
+        System.out.println("DD:");
+        String DD = in.nextLine();
+        System.out.println("MM:");
+        String MM = in.nextLine();
+        System.out.println("AAAA:");
+        String AAAA = in.nextLine();
+        // Date fecha = Date.valueOf(LocalDate.parse(DD +"/" + MM + "/" + AAAA, dateFormatter))
         System.out.println("Introduce el importe:");
         nuevoPago.setImporte(in.nextDouble());
         System.out.println("Introduce el método de pago:");
-        char sector = in.nextLine().charAt(0);
+        
                      
                 return nuevoPago;         
     }

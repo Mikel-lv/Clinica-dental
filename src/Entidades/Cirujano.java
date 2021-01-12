@@ -49,5 +49,12 @@ public class Cirujano extends Empleado{
         this.nombre = c.nombre;
         this.tlfcontacto = c.tlfcontacto;
     }
+
+    @Override
+    public String toString() {
+        return "Cirujano{" + "especialidades=" + especialidades + '}';
+    }
+    
+    
     
 }

@@ -41,14 +41,50 @@ public class Utilidades {
          
          
    public static final Intervencion INTERVENCIONES [] = {
-       new Intervencion (49, ) // medir en minutos (reflejarlo en la tabla) preguntar por los ARRAYLIST
+       //new Intervencion (49, ) // medir en minutos (reflejarlo en la tabla) preguntar por los ARRAYLIST
        
    };
         public static final int numIntervencion = INTERVENCIONES.length;
         
    public static final InformeGlobal INFORMES [] = {
         
-       new InformeGlobal (3333,"patatín y patatán") //ArrayList
+       //new InformeGlobal (3333,"patatín y patatán") //ArrayList
        
    };
+   
+   public static final Empleado EMPLEADOS [] = {
+    
+       new Empleado (01,"Manolo","Garcia","649678821","72598327C","C/Menendez Pelayo"),
+       new Empleado (02,"Carlos","Martinez","649673821","72598327N","C/Venancio Bosco"),
+       new Empleado (03,"David","Lopez","659678821","73598327C","C/Bajada el Chorrillo")
+       
+   };
+        public static final int Empleado = EMPLEADOS.length;
+    
+    public static final Enfermeria ENFERMERIA [] = {
+    
+      new Enfermeria ('A',01,"Laura","Martinez","640798854","72208764J","C/Menendez Pelayo"),
+      new Enfermeria ('B',02,"Martin","Morales","640758854","722087321A","C/Bajada el Chorrillo"),
+      new Enfermeria ('C',03,"Maria","Lopez","620798854","62208764N","C/Menendez Pelayo"),
+       
+   };
+        public static final int Enfermeria = ENFERMERIA.length;
+        
+    public static final Cirujano CIRUJANOS [] = {
+    
+      //new Cirujano (ArrayList,01,"Elsa","Patico","640758854","72208724J","C/Menendez Pelayo"),
+      //new Cirujano (ArrayList,02,"Ana","Rosa","640218854","725687321A","C/San Ignacio"),
+      //new Cirujano (ArrayList,03,"Aaron","Garcia","620928854","73208764N","Barrio Los Marineros"),
+       
+   };
+     public static final int Cirujano = CIRUJANOS.length;
+   
+      public static final Secretariado SECRETARIADO [] = {
+    
+      //new Secretariado (2,ArrayList,01,"Elsa","Pataco","640758214","72205524J","C/Menendez Pelayo"),
+      //new Secretariado (5,ArrayList,02,"Marcos","Rosa","640412854","725227321A","C/San Ignacio"),
+      //new Secretariado (8,ArrayList,03,"Aaron","Lopez","620928854","73208764N","Barrio Los Marineros"),
+       
+   };
+      public static final int Secretariado = SECRETARIADO.length;
 }

@@ -44,6 +44,13 @@ public class Enfermeria extends Empleado{
         this.tlfcontacto = e.tlfcontacto;
         this.categoria = e.categoria;
     }
+
+    @Override
+    public String toString() {
+        return "Enfermeria{" + "categoria=" + categoria + '}';
+    }
+    
+    
     public static Enfermeria nuevoEnfermeria(){
         Enfermeria nuevoEnfermeria = new Enfermeria();
         Scanner in = new Scanner(System.in);

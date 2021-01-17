@@ -25,6 +25,8 @@ public class Utilidades {
         new Cobro (001, 110, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter))),
         new Cobro (015, 300, Date.valueOf(LocalDate.parse("04/01/2021", dateFormatter))),
         new Cobro (033, 250.500, Date.valueOf(LocalDate.parse("10/01/2021", dateFormatter))),
+        new Cobro (037, 170, Date.valueOf(LocalDate.parse("15/01/2021", dateFormatter))),
+        
     };
     
     
@@ -43,9 +45,10 @@ public class Utilidades {
          
          
    public static final Intervencion INTERVENCIONES [] = {
-       //new Intervencion (49, ) // medir en minutos (reflejarlo en la tabla) 
+     //  new Intervencion (49, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 2}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1, 2})),
        
    };
+   
         public static final int numIntervencion = INTERVENCIONES.length;
         
    public static final InformeGlobal INFORMES [] = {
@@ -63,14 +66,14 @@ public class Utilidades {
    };
         public static final int Empleado = EMPLEADOS.length;
     
-    public static final Enfermeria ENFERMERIA [] = {
+    public static final Enfermeria ENFERMEROS [] = {
     
       new Enfermeria ('A',01,"Laura","Martinez","640798854","72208764J","C/Menendez Pelayo"),
       new Enfermeria ('B',02,"Martin","Morales","640758854","722087321A","C/Bajada el Chorrillo"),
       new Enfermeria ('C',03,"Maria","Lopez","620798854","62208764N","C/Menendez Pelayo"),
        
    };
-        public static final int Enfermeria = ENFERMERIA.length;
+        public static final int Enfermeria = ENFERMEROS.length;
         
     public static final Cirujano CIRUJANOS [] = {
     
@@ -156,6 +159,8 @@ public class Utilidades {
 //          new Historial (57, "CCCCCC", Arraylist Cirujano),
       };
       public static final int Especialidad = ESPECIALIDADES.length;
+      
+      
       
       
       public static class Fecha {

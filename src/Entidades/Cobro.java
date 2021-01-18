@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Cobro {
     private long id; //  VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir
     private double importe; // VALIDOS: >0 INVÁLIDOS <0 En €
-    private Date fechaFin; //NO VÁLIDAS FECHAS ANTES DEL AÑO 2000
+    private Date fechaFin;// VALIDOS: Del 01/01/2000 hasta el 31/12/2100
 
     public long getId() {
         return id;

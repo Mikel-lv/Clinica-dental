@@ -5,7 +5,7 @@
  */
 package Entidades;
 
-import static java.lang.System.in;
+
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -16,9 +16,9 @@ import java.util.Scanner;
  */
 public class Pago {
     private long id; // VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir.
-    private Date fechaPago; //
+    private Date fechaPago = Date.valueOf(LocalDate.now());; // VALIDOS: Del 01/01/2000 hasta el 31/12/2100
     private double importe; // VALIDOS: >0 INVÁLIDOS <0 en €
-    private String metodoPago; // VALIDOS: "metálico", "tarjeta" y "transferencia"
+    private String metodoPago = "tarjeta"; // VALIDOS: "metálico", "tarjeta" y "transferencia"
     private Cobro cobro;
 
     

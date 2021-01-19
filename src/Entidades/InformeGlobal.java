@@ -67,8 +67,8 @@ public class InformeGlobal {
      public static InformeGlobal InformeGlobal(){
         InformeGlobal nuevoInformeGlobal = new InformeGlobal(); 
         Scanner in = new Scanner(System.in);
-        System.out.println("Introduce el Id:");
-        nuevoInformeGlobal.setId(in.nextInt()); 
+        //System.out.println("Introduce el Id:");
+        long idInf = nextIdInforme();         
         System.out.println("Introduce una descripción:");
         nuevoInformeGlobal.setDescripcion (in.nextLine ());
         return nuevoInformeGlobal;
@@ -89,4 +89,16 @@ public class InformeGlobal {
              return ret;         
     }
     
+     /**
+      * 
+      * @return El último Id +1
+      */
+     public static long nextIdInforme (){
+         long ret = 0;
+         for(int i=0; i<Utilidades.INFORMES.length; i++){
+             if(Utilidades.INFORMES[i].id>ret);
+             ret = Utilidades.INFORMES[i].id;
+         }            
+         return ret+1;
+     }
 }

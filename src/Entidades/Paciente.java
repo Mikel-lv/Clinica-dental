@@ -145,7 +145,7 @@ public class Paciente {
         nuevoPaciente.setDireccion(in.nextLine());
         System.out.println("Introduce el DNI");
         nuevoPaciente.setDNI(in.nextLine());
-//        System.out.println("Introduce el historial");     Nose que in. poner
+//        System.out.println("Introduce el historial");     Nose que ni que poner
 //        nuevoPaciente.setHistorial(in.nextLine());
         return nuevoPaciente;
     }

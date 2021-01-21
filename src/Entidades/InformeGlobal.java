@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class InformeGlobal {
     private long id; // VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir.
-    private String descripcion; // No puede estar vacío, y tiene un mínimo de 10 carcteres.
+    private String descripcion; // No ArrayList<Secretariado> secretariospuede estar vacío, y tiene un mínimo de 10 carcteres.
     private ArrayList<Secretariado> secretarios = new ArrayList<Secretariado>();
 
     public long getId() {
@@ -76,16 +76,17 @@ public class InformeGlobal {
          
     }
     
-     public static InformeGlobal nuevoInformeGlobal(){
+     public static InformeGlobal nuevoInformeGlobal(Secretariado s){
         InformeGlobal ret = new InformeGlobal(); 
         Scanner in = new Scanner(System.in);
         System.out.println("Intrudce el Id del informe:");
         int id = in.nextInt();
-        ret.setId (in.nextInt()); 
+        ret.setId (id); 
         System.out.println("Descripción:");
         String descripcion = in.nextLine();
-        ret.setDescripcion(descripcion);
-                
+        ret.setDescripcion(descripcion); 
+        
+        ret.secretarios.add(s);
              return ret;         
     }
     
@@ -101,4 +102,20 @@ public class InformeGlobal {
          }            
          return ret+1;
      }
+     
+            /**
+     * *
+     * Función que convierte un array de objetos InformeGlobal en un ArrayList de
+     * objetos InformeGlobal con los mismos elementos que el array.
+     *
+     * @param array de InformesGlobales
+     * @return ArrayList de InformesGlobales
+     */
+    public static final ArrayList<InformeGlobal> convertir(InformeGlobal[] array) {
+        ArrayList<InformeGlobal> ret = new ArrayList<InformeGlobal>();
+        for (InformeGlobal i : array) {
+            ret.add((InformeGlobal) i);
+        }
+        return ret;
+    }
 }

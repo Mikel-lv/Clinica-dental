@@ -5,6 +5,8 @@
  */
 package clinica.dental;
 
+import Entidades.*;
+
 /**
  *
  * @author Mikel
@@ -16,5 +18,10 @@ public class ClinicaDental {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Enfermeria mikel = Enfermeria.nuevoEnfermeria();
+        System.out.println("Enermero Mikel:" + mikel);
+        Secretariado s = Secretariado.nuevoSecretariado();
+//        InformeGlobal i = s.nuevoInformeGlobal();
+        InformeGlobal.nuevoInformeGlobal(s);
     }
 }

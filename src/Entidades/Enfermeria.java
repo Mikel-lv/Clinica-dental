@@ -35,28 +35,27 @@ public class Enfermeria extends Empleado{
     }
 
     //Constructor de copia
-    public Enfermeria(Enfermeria e) {
-        this.NIF = e.NIF;
-        this.apellidos = e.apellidos;
-        this.direccion = e.direccion;
-        this.id = e.id;
-        this.nombre = e.nombre;
-        this.tlfcontacto = e.tlfcontacto;
-        this.categoria = e.categoria;
+    public Enfermeria(Enfermeria enfermero) {
+        super(enfermero);
+        this.categoria = enfermero.categoria;
+    }
+    
+    public Enfermeria(Empleado empleado) {
+        super(empleado);
     }
 
     @Override
     public String toString() {
-        return "Enfermeria{" + "categoria=" + categoria + '}';
+        return "Enfermeria{" + super.toString() + "categoria=" + categoria + '}';
     }
     
     
     public static Enfermeria nuevoEnfermeria(){
-        Enfermeria nuevoEnfermeria = new Enfermeria();
+        Empleado nuevoEnfermeria =  Empleado.nuevoEmpleado();
+        Enfermeria ret = new Enfermeria(nuevoEnfermeria);
         Scanner in = new Scanner(System.in);
         System.out.println("Introduce la categoria");
-        nuevoEnfermeria.setCategoria(in.nextLine().charAt(0));  
-        
-        return nuevoEnfermeria;
+        ret.setCategoria(in.nextLine().charAt(0));  
+        return ret;
     }
 }

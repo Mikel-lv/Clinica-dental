@@ -55,6 +55,13 @@ public class Cirujano extends Empleado{
         return "Cirujano{" + "especialidades=" + especialidades + '}';
     }
     
+   
     
-    
+    public static final ArrayList<Cirujano> convertir(Cirujano[] array) {
+        ArrayList<Cirujano> ret = new ArrayList<Cirujano>();
+        for (Cirujano i : array) {
+            ret.add((Cirujano) i);
+        }
+        return ret;
+    }
 }

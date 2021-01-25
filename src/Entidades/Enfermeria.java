@@ -5,6 +5,7 @@
  */
 package Entidades;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -56,6 +57,14 @@ public class Enfermeria extends Empleado{
         Scanner in = new Scanner(System.in);
         System.out.println("Introduce la categoria");
         ret.setCategoria(in.nextLine().charAt(0));  
+        return ret;
+    }
+    
+    public static final ArrayList<Enfermeria> convertir(Enfermeria[] array) {
+        ArrayList<Enfermeria> ret = new ArrayList<Enfermeria>();
+        for (Enfermeria i : array) {
+            ret.add((Enfermeria) i);
+        }
         return ret;
     }
 }

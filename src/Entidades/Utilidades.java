@@ -34,10 +34,7 @@ public class Utilidades {
 
     public static final int numPago = PAGOS.length;
 
-    public static final Intervencion INTERVENCIONES[] = { //  new Intervencion (49, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 2}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1, 2})),
-    };
-
-    public static final int numIntervencion = INTERVENCIONES.length;
+    
 
     public static final Empleado EMPLEADOS[] = {
         new Empleado(01, "Manolo", "Garcia", "649678821", "72598327C", "C/Menendez Pelayo"),
@@ -68,8 +65,13 @@ public class Utilidades {
     public static final int Secretarios = SECRETARIADOS.length;
 
     public static final InformeGlobal INFORMES[] = {
-        new InformeGlobal(1, "patatín y patatán", Secretariado.convertir(new Secretariado[]{SECRETARIADOS[0]}))
+        new InformeGlobal(1, "Extracción muela 37", Secretariado.convertir(new Secretariado[]{SECRETARIADOS[0]})),
+        new InformeGlobal(7, "Revisión rutania + limpieza buscal", Secretariado.convertir(new Secretariado[]{SECRETARIADOS[0]})),
+        new InformeGlobal(13, "Cirugía de elevación de seno maxilar ", Secretariado.convertir(new Secretariado[]{SECRETARIADOS[0]})),
+        new InformeGlobal(21, "Revisión y ajuste ortodoncia", Secretariado.convertir(new Secretariado[]{SECRETARIADOS[0]}))
+            
     };
+    public static final int InformeGlobal = INFORMES.length;
 
     public static final Revision REVISIONES[] = { //          new Revision ("todo correcto", CIRUJANOS [0], 5, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'M', HORA, SECRETARIADOS [0]),   NO SABEMOS PONER LA HORA
     //          new Revision ("muerto", CIRUJANOS [0], 4, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), 'T', HORA, SECRETARIADOS [0]),
@@ -88,12 +90,20 @@ public class Utilidades {
     //          new Tratamiento (1, "extraccion", Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)), N, COBROS [0], INFORMES [0], Arraylist cita)
     };
     public static final int Tratmamiento = TRATAMIENTOS.length;
+    
+    
+    public static final Intervencion INTERVENCIONES[] = { 
+        new Intervencion(1, Enfermeria.convertir(new Enfermeria[]{SECRETARIADOS[0]})),
+    };
+
+    public static final int numIntervencion = INTERVENCIONES.length;
 
     public static final Paciente PACIENTES[] = { //          new Paciente (3, "Juan", "Gonzalez", "Calle santander 23 1ºB", "75926351K", HISTORIAL [0], Arraylist Cita, Arraylist Tratamiento)
     //          new Paciente (6, "Paula", "Univaso", "Calle la rona 2 5ºC", "47523767P", HISTORIAL [0], Arraylist Cita, Arraylist Tratamiento)
     //          new Paciente (2, "Pedro", "Martin", "Calle santander 23 1ºB", "24572357D", HISTORIAL [0], Arraylist Cita, Arraylist Tratamiento)
     };
     public static final int Paciente = PACIENTES.length;
+        
 
     public static final Historial HISTORIALES[] = { //          new Historial (2, "AAAAAAA", Arraylist Alergia),
     //          new Historial (66, "BBBBBBB", Arraylist Alergia),

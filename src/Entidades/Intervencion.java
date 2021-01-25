@@ -143,7 +143,17 @@ public class Intervencion extends Cita {
         int duracion = in.nextInt();
         ret.setId (in.nextInt());         
         return ret;
-          
+                 
+       
+    }
+        
+        
+        public static final ArrayList<Intervencion> convertir(Intervencion[] array) {
+        ArrayList<Intervencion> ret = new ArrayList<Intervencion>();
+        for (Intervencion e : array) {
+            ret.add((Intervencion) e);
+        }
+        return ret;
     }
 }
 

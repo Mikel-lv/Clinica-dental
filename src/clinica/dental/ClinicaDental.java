@@ -19,7 +19,7 @@ public class ClinicaDental {
      */
     public static void main(String[] args) {
         
-           
+          
 
         int opcion = -1;
         Scanner in = new Scanner(System.in);

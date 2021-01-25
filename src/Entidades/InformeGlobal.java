@@ -64,30 +64,18 @@ public class InformeGlobal {
     
     
     
-     public static InformeGlobal InformeGlobal(){
-        InformeGlobal nuevoInformeGlobal = new InformeGlobal(); 
-        Scanner in = new Scanner(System.in);
-        //System.out.println("Introduce el Id:");
-        long idInf = nextIdInforme();         
-        System.out.println("Introduce una descripción:");
-        nuevoInformeGlobal.setDescripcion (in.nextLine ());
-        return nuevoInformeGlobal;
-       
-         
-    }
+    
     
      public static InformeGlobal nuevoInformeGlobal(Secretariado s){
         InformeGlobal ret = new InformeGlobal(); 
         Scanner in = new Scanner(System.in);
-        System.out.println("Intrudce el Id del informe:");
-        int id = in.nextInt();
-        ret.setId (id); 
+        long id = nextIdInforme();    
+        ret.setId(id);
         System.out.println("Descripción:");
-        String descripcion = in.nextLine();
-        ret.setDescripcion(descripcion); 
-        
+        String descripcion = in.nextLine();  
+        ret.setDescripcion(descripcion);
         ret.secretarios.add(s);
-             return ret;         
+        return ret;         
     }
     
      /**

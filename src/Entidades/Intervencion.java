@@ -15,6 +15,7 @@ import java.util.Scanner;
  * @author punib
  */
 public class Intervencion extends Cita {
+
     private int duracion;
     private ArrayList<Enfermeria> enfermeros = new ArrayList<Enfermeria>();
     private ArrayList<Cirujano> cirujanos = new ArrayList<Cirujano>();
@@ -71,47 +72,35 @@ public class Intervencion extends Cita {
         return hora;
     }
 
-    
     public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
-
-  
-
-    
 
     public Secretariado getSecretariado() {
         return secretariado;
     }
 
-    
-
-    
-
     public void setSecretariado(Secretariado secretariado) {
         this.secretariado = secretariado;
     }
 
-    
-    
     public Intervencion() {
-    super();
+        super();
     }
 
-    public Intervencion(int duracion, ArrayList<Enfermeria> enfermeros ,ArrayList<Cirujano> cirujanos ) {
-    super();   
+    public Intervencion(int duracion, ArrayList<Enfermeria> enfermeros, ArrayList<Cirujano> cirujanos) {
+        super();
         this.duracion = duracion;
         this.enfermeros = enfermeros;
         this.cirujanos = cirujanos;
-        
-    
+
     }
 
     public Intervencion(int duracion) {
         this.duracion = duracion;
     }
 
-    public Intervencion(int duracion, long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado, ArrayList<Enfermeria> enfermeros ,ArrayList<Cirujano> cirujanos) {
+    public Intervencion(int duracion, long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado, ArrayList<Enfermeria> enfermeros, ArrayList<Cirujano> cirujanos) {
         super(id, fecha, rango_horario, hora, secretariado);
         this.duracion = duracion;
         this.cirujanos = cirujanos;
@@ -127,34 +116,62 @@ public class Intervencion extends Cita {
         this.rango_horario = e.rango_horario;
         this.hora = e.hora;
         this.secretariado = e.secretariado;
-               
+
     }
 
     @Override
     public String toString() {
-        return "Intervencion{" + "duracion=" + duracion + ", enfermeros=" + enfermeros + ", cirujanos=" + cirujanos + '}';
+
+        return "La intervención duró " + duracion + "minutos, y participaron los siguientes enfermeros y cirujanos: " + enfermeros + cirujanos;
     }
-    
-    
-     public static Intervencion nuevoIntervencion(){
-        Intervencion ret = new Intervencion(); 
+
+    public static Intervencion nuevoIntervencion() {
+        Intervencion ret = new Intervencion();
         Scanner in = new Scanner(System.in);
         System.out.println("Introduce (en minutos) la duración de la intervención: ");
         int duracion = in.nextInt();
-        ret.setId (in.nextInt());         
+        ret.setId(in.nextInt());
         return ret;
-                 
-       
+
     }
-        
-        
-        public static final ArrayList<Intervencion> convertir(Intervencion[] array) {
+
+    /**
+     * Función que se le pasa una lista ArrayList<code>Intervencion</code> y un
+     * array de identificadores, y devuelve una sublista con los Intervenciones
+     * cuyos ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Intervencion en las que buscar
+     * @param ids array de ids de Intervencion
+     * @return ArrayList<code>Intervencion</code>
+     */
+    public static ArrayList<Intervencion> arrayde(ArrayList<Intervencion> lista, int[] ids) {
+        ArrayList<Intervencion> ret = new ArrayList<Intervencion>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Intervencion) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
+
+    /**
+     * Función que convierte un array de objetos Intervencion en un ArrayList de
+     * objetos Intervencion con los mismos elementos que el array.
+     *
+     * @param array
+     * @return ArrayList de Intervencion
+     */
+    public static final ArrayList<Intervencion> convertir(Intervencion[] array) {
         ArrayList<Intervencion> ret = new ArrayList<Intervencion>();
         for (Intervencion e : array) {
             ret.add((Intervencion) e);
         }
         return ret;
     }
+
 }
 
 //

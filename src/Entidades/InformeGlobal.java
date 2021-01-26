@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author punib
  */
 public class InformeGlobal {
+
     private long id; // VALIDOS: >0 INVÁLIDOS <0. Valor unico, no se puede repetir.
     private String descripcion; // No ArrayList<Secretariado> secretariospuede estar vacío, y tiene un mínimo de 10 carcteres.
     private ArrayList<Secretariado> secretarios = new ArrayList<Secretariado>();
@@ -28,8 +29,6 @@ public class InformeGlobal {
     public void setSecretarios(ArrayList<Secretariado> secretarios) {
         this.secretarios = secretarios;
     }
-
-    
 
     public String getDescripcion() {
         return descripcion;
@@ -51,6 +50,7 @@ public class InformeGlobal {
         this.descripcion = descripcion;
         this.secretarios = secretarios;
     }
+
     public InformeGlobal(InformeGlobal e) {
         this.id = e.id;
         this.descripcion = e.descripcion;
@@ -59,42 +59,66 @@ public class InformeGlobal {
 
     @Override
     public String toString() {
-        return "InformeGlobal{" + "id=" + id + ", descripcion=" + descripcion + ", secretarios=" + secretarios + '}';
+
+        return "Informe con identificador " + id + ". Descripción: " + descripcion + ". Informe redactado por el/los secreatrio/os: " + secretarios;
     }
-    
-    
-    
-    
-    
-     public static InformeGlobal nuevoInformeGlobal(Secretariado s){
-        InformeGlobal ret = new InformeGlobal(); 
+
+    /**
+     *Función para crear un nuevo empleado
+     * @param s
+     * @return un nuevo empleado
+     */
+    public static InformeGlobal nuevoInformeGlobal(Secretariado s) {
+        InformeGlobal ret = new InformeGlobal();
         Scanner in = new Scanner(System.in);
-        long id = nextIdInforme();    
+        long id = nextIdInforme();
         ret.setId(id);
         System.out.println("Descripción:");
-        String descripcion = in.nextLine();  
+        String descripcion = in.nextLine();
         ret.setDescripcion(descripcion);
         ret.secretarios.add(s);
-        return ret;         
+        return ret;
     }
-    
-     /**
-      * 
-      * @return El último Id +1
-      */
-     public static long nextIdInforme (){
-         long ret = 0;
-         for(int i=0; i<Utilidades.INFORMES.length; i++){
-             if(Utilidades.INFORMES[i].id>ret);
-             ret = Utilidades.INFORMES[i].id;
-         }            
-         return ret+1;
-     }
-     
-            /**
+
+    /**
+     *
+     * @return El último Id +1
+     */
+    public static long nextIdInforme() {
+        long ret = 0;
+        for (int i = 0; i < Utilidades.INFORMES.length; i++) {
+            if (Utilidades.INFORMES[i].id > ret);
+            ret = Utilidades.INFORMES[i].id;
+        }
+        return ret + 1;
+    }
+
+    /**
+     * Función que se le pasa una lista ArrayList<code>InformeGlobal</code> y un
+     * array de identificadores, y devuelve una sublista con los Informes cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de InformeGlobal en las que buscar
+     * @param ids array de ids de InformeGlobal
+     * @return ArrayList<code>InformeGlobal</code>
+     */
+    public static ArrayList<InformeGlobal> arrayde(ArrayList<InformeGlobal> lista, int[] ids) {
+        ArrayList<InformeGlobal> ret = new ArrayList<InformeGlobal>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((InformeGlobal) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
+
+    /**
      * *
-     * Función que convierte un array de objetos InformeGlobal en un ArrayList de
-     * objetos InformeGlobal con los mismos elementos que el array.
+     * Función que convierte un array de objetos InformeGlobal en un ArrayList
+     * de objetos InformeGlobal con los mismos elementos que el array.
      *
      * @param array de InformesGlobales
      * @return ArrayList de InformesGlobales

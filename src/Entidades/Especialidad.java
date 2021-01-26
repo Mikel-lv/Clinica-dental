@@ -71,6 +71,14 @@ public class Especialidad {
         return nuevoEspecialidad;
     }
 
+      public static final ArrayList<Especialidad> convertir(Especialidad[] array) {
+        ArrayList<Especialidad> ret = new ArrayList<Especialidad>();
+        for (Especialidad i : array) {
+            ret.add((Especialidad) i);
+        }
+        return ret;
+    }
+    
     @Override
     public String toString() {
         return "Especialidad{" + "id=" + id + ", nombre=" + nombre + ", cirujanos=" + cirujanos + '}';

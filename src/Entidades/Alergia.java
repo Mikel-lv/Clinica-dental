@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author sebas
  */
 public class Alergia {
-    
+
     private long id; // <0 y ha de ser único
     private String nombre; // Máximo 20 caracteres alfanuméricos
     private Medicamento medicamento; // Objeto de tipo medicamento
@@ -83,6 +83,14 @@ public class Alergia {
         System.out.println("Introduce el nombre");
         nuevoAlergia.setNombre(in.nextLine());
         return nuevoAlergia;
+    }
+    
+     public static final ArrayList<Alergia> convertir(Alergia[] array) {
+        ArrayList<Alergia> ret = new ArrayList<Alergia>();
+        for (Alergia i : array) {
+            ret.add((Alergia) i);
+        }
+        return ret;
     }
 
     @Override

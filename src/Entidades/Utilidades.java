@@ -106,26 +106,26 @@ public class Utilidades {
         
 
     public static final Historial HISTORIALES[] = { //          new Historial (2, "AAAAAAA", Arraylist Alergia),
-    //          new Historial (66, "BBBBBBB", Arraylist Alergia),
-    //          new Historial (22458, "CCCCCC", Arraylist Alergia),
+            new Historial (66, "BBBBBBB", Alergia.convertir(new Alergia[]{ALERGIAS[0]})),
+    //          new Historial (22458, "CCCCCC", Alergia.convertir(new Alergia[]{ALERGIAS[0]})),
     };
     public static final int Historial = HISTORIALES.length;
 
     public static final Alergia ALERGIAS[] = { //          new Historial (77, "AAAAAAA","Medicamento", Arraylist Historial),
-    //          new Historial (69, "BBBBBBB","Medicamento", Arraylist Historial),
-    //          new Historial (885857, "CCCCCC","Medicamento", Arraylist Historial),
+    //          new Historial (69, "BBBBBBB","Medicamento", Historial.convertir(new Historial[]{HISTORIALES[0]})),
+    //          new Historial (885857, "CCCCCC","Medicamento", Historial.convertir(new Historial[]{HISTORIALES[0]})),
     };
     public static final int Alergia = ALERGIAS.length;
 
     public static final Medicamento MEDICAMENTOS[] = { //          new Historial (611, "AAAAAAA","Principioactivo",1, Arraylist Cita),
-    //          new Historial (888, "BBBBBBB","Principioactivo",3, Arraylist Cita),
-    //          new Historial (8857, "CCCCCC","Principioactivo",2, Arraylist Cita),
+    //          new Historial (888, "BBBBBBB","Principioactivo",3, Cita.convertir(new Cita[]{CITAS[0]})),
+    //          new Historial (8857, "CCCCCC","Principioactivo",2, Cita.convertir(new Cita[]{CITAS[0]})),
     };
     public static final int Medicamento = MEDICAMENTOS.length;
 
     public static final Especialidad ESPECIALIDADES[] = { //          new Historial (11, "AAAAAAA", Arraylist Cirujano),
-    //          new Historial (8, "BBBBBBB", Arraylist Cirujano),
-    //          new Historial (57, "CCCCCC", Arraylist Cirujano),
+    //          new Historial (8, "BBBBBBB", Cirujano.convertir(new Cirujano[]{CIRUJANOS[0]})),
+    //          new Historial (57, "CCCCCC", Cirujano.convertir(new Cirujano[]{CIRUJANOS[0]})),
     };
     public static final int Especialidad = ESPECIALIDADES.length;
 

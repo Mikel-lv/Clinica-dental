@@ -74,6 +74,14 @@ public class Historial {
     
      
 }
+        
+   public static final ArrayList<Historial> convertir(Historial[] array) {
+        ArrayList<Historial> ret = new ArrayList<Historial>();
+        for (Historial i : array) {
+            ret.add((Historial) i);
+        }
+        return ret;
+    }     
 
     @Override
     public String toString() {

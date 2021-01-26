@@ -97,6 +97,14 @@ public class Medicamento {
         return nuevoMedicamento;
     }
 
+       public static final ArrayList<Medicamento> convertir(Medicamento[] array) {
+        ArrayList<Medicamento> ret = new ArrayList<Medicamento>();
+        for (Medicamento i : array) {
+            ret.add((Medicamento) i);
+        }
+        return ret;
+    }
+    
     @Override
     public String toString() {
         return "Medicamento{" + "id=" + id + ", nombre=" + nombre + ", principioactivo=" + principioactivo + ", dosismaxima=" + dosismaxima + ", citas=" + citas + '}';

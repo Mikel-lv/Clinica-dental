@@ -6,6 +6,7 @@
 package Entidades;
 
 import java.sql.Date;
+import java.text.Normalizer;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -93,7 +94,7 @@ public class Utilidades {
     
     
     public static final Intervencion INTERVENCIONES[] = { 
-        new Intervencion(1, Enfermeria.convertir(new Enfermeria[]{SECRETARIADOS[0]})),
+     //   new Intervencion(1, Enfermeria.convertir(new Enfermeria[]{SECRETARIADOS[0]})),
     };
 
     public static final int numIntervencion = INTERVENCIONES.length;
@@ -106,7 +107,7 @@ public class Utilidades {
         
 
     public static final Historial HISTORIALES[] = { //          new Historial (2, "AAAAAAA", Arraylist Alergia),
-            new Historial (66, "BBBBBBB", Alergia.convertir(new Alergia[]{ALERGIAS[0]})),
+       //     new Historial (66, "BBBBBBB", Alergia.convertir(new Alergia[]{ALERGIAS[0]})),
     //          new Historial (22458, "CCCCCC", Alergia.convertir(new Alergia[]{ALERGIAS[0]})),
     };
     public static final int Historial = HISTORIALES.length;
@@ -173,5 +174,11 @@ public class Utilidades {
             return ret;
 
         }
+    }
+    
+    public static String removeDiacriticalMarks(String string) {
+        //Form.NFC acepta ñ y distingue las tildes en español
+        return Normalizer.normalize(string, Normalizer.Form.NFC)
+                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
     }
 }

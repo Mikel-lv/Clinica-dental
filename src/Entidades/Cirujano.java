@@ -49,13 +49,22 @@ public class Cirujano extends Empleado{
         this.nombre = c.nombre;
         this.tlfcontacto = c.tlfcontacto;
     }
+    
+    public Cirujano(Empleado empleado){
+        super(empleado);
+    }
 
     @Override
     public String toString() {
         return "Cirujano{" + "especialidades=" + especialidades + '}';
     }
     
-   
+   public static Cirujano nuevoCirujano(){
+       Empleado nuevoCirujano = Empleado.nuevoEmpleado();
+       Cirujano ret = new Cirujano(nuevoCirujano);
+       return ret;
+       
+   }
     
     public static final ArrayList<Cirujano> convertir(Cirujano[] array) {
         ArrayList<Cirujano> ret = new ArrayList<Cirujano>();

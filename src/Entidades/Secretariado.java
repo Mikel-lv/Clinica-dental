@@ -58,19 +58,23 @@ public class Secretariado extends Empleado {
         this.experiencia = s.experiencia;
     }
 
+    public Secretariado(Empleado empleado){
+        super(empleado);
+    }
     @Override
     public String toString() {
         return "Secretariado{" + "experiencia=" + experiencia + ", informesglobales=" + informesglobales + '}';
     }
 
-    //Metodo para crear un nuevoSecreatiado "¿Hay que añadir también los atributos de la superclase?"
+    //Metodo para crear un nuevoSecreatiado 
     public static Secretariado nuevoSecretariado() {
-        Secretariado nuevoSecretariado = new Secretariado();
+        Empleado nuevoSecretariado =  Empleado.nuevoEmpleado();
+        Secretariado ret = new Secretariado(nuevoSecretariado);
         Scanner in = new Scanner(System.in);
         System.out.println("Introduce la experiencia");
-        nuevoSecretariado.setExperiencia(in.nextInt());
+        ret.setExperiencia(in.nextInt());
 
-        return nuevoSecretariado;
+        return ret;
     }
 
     public InformeGlobal nuevoInformeGlobal() {

@@ -55,22 +55,16 @@ public class Utilidades {
         new Especialidad(3, "Ortodoncistas", new ArrayList<Cirujano>()),
         new Especialidad(4, "Cirujano maxilofacial", new ArrayList<Cirujano>()),
         new Especialidad(5, "Periodoncista", new ArrayList<Cirujano>())};
-    
-    
-    public static final Cirujano CIRUJANOS[] = { 
-        new Cirujano(Especialidad.arrayde(Especialidad.convertir(ESPECIALIDADES), new int[]{1, 3,}),01 , "Elsa", "Pataco", "678943567", "72208724T", "C/Menendez Pelayo"),
-        new Cirujano(Especialidad.arrayde(Especialidad.convertir(ESPECIALIDADES), new int[]{2,5}), 02, "Marcos","Rosa","640412854","725227321A","C/San Ignacio"),
-        new Cirujano(Especialidad.arrayde(Especialidad.convertir(ESPECIALIDADES), new int[]{1, 3, 4}),01 , "Ana","Rosa","640218854","725687321A","C/San Ignacio"),
 
-    };
+    public static final Cirujano CIRUJANOS[] = {
+        new Cirujano(Especialidad.arrayde(Especialidad.convertir(ESPECIALIDADES), new int[]{1, 3,}), 01, "Elsa", "Pataco", "678943567", "72208724T", "C/Menendez Pelayo"),
+        new Cirujano(Especialidad.arrayde(Especialidad.convertir(ESPECIALIDADES), new int[]{2, 5}), 02, "Marcos", "Rosa", "640412854", "725227321A", "C/San Ignacio"),
+        new Cirujano(Especialidad.arrayde(Especialidad.convertir(ESPECIALIDADES), new int[]{1, 3, 4}), 01, "Ana", "Rosa", "640218854", "725687321A", "C/San Ignacio"),};
     public static final int numCirujanos = CIRUJANOS.length;
 
     public static final Secretariado[] SECRETARIADOS = {
-        new Secretariado(01, "Elsa", "Pataco", "640758214", "72205524J", "C/Menendez Pelayo", 2, new ArrayList<InformeGlobal>())
-    //new Secretariado (5,ArrayList,02,"Marcos","Rosa","640412854","725227321A","C/San Ignacio"),
-    //new Secretariado (8,ArrayList,03,"Aaron","Lopez","620928854","73208764N","Barrio Los Marineros"),
-
-    };
+        new Secretariado(01, "Alicia", "Millán", "640758214", "72205524J", "C/Menendez Pelayo", 2, new ArrayList<InformeGlobal>()),
+        new Secretariado(02, "Marcos", "Del Rey", "640412854", "725227321A", "C/San Ignacio", 6, new ArrayList<InformeGlobal>())};
     public static final int numSecretarios = SECRETARIADOS.length;
 
     public static final InformeGlobal INFORMES[] = {

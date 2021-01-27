@@ -90,6 +90,28 @@ public class Secretariado extends Empleado {
         return ret;
     }
 
+    
+    /**
+     * Función que se le pasa una lista ArrayList<code>Secretariado</code> y un
+     * array de identificadores, y devuelve una sublista con los Secretarios cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Secretariado en las que buscar
+     * @param ids array de ids de Secretariado
+     * @return ArrayList<code>Secretariado</code>
+     */
+    public static ArrayList<Secretariado> arrayde(ArrayList<Secretariado> lista, int[] ids) {
+        ArrayList<Secretariado> ret = new ArrayList<Secretariado>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Secretariado) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
     /**
      * *
      * Función que convierte un array de objetos Secretariado en un ArrayList de

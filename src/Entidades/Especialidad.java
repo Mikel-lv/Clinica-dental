@@ -71,6 +71,29 @@ public class Especialidad {
         return nuevoEspecialidad;
     }
 
+    
+    /**
+     * Función que se le pasa una lista ArrayList<code>Especialidad</code> y un
+     * array de identificadores, y devuelve una sublista con las especialidades cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Especialidad en las que buscar
+     * @param ids array de ids de Especialidad
+     * @return ArrayList<code>Especialidad</code>
+     */
+    public static ArrayList<Especialidad> arrayde(ArrayList<Especialidad> lista, int[] ids) {
+        ArrayList<Especialidad> ret = new ArrayList<Especialidad>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Especialidad) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
+    
       public static final ArrayList<Especialidad> convertir(Especialidad[] array) {
         ArrayList<Especialidad> ret = new ArrayList<Especialidad>();
         for (Especialidad i : array) {

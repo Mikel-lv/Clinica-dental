@@ -65,6 +65,28 @@ public class Cirujano extends Empleado{
        return ret;
        
    }
+   
+   /**
+     * Función que se le pasa una lista ArrayList<code>Cirujano</code> y un
+     * array de identificadores, y devuelve una sublista con los Cirujanos cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Cirujanos en las que buscar
+     * @param ids array de ids de Cirujanos
+     * @return ArrayList<code>Cirujano</code>
+     */
+    public static ArrayList<Cirujano> arrayde(ArrayList<Cirujano> lista, int[] ids) {
+        ArrayList<Cirujano> ret = new ArrayList<Cirujano>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Cirujano) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
     
     public static final ArrayList<Cirujano> convertir(Cirujano[] array) {
         ArrayList<Cirujano> ret = new ArrayList<Cirujano>();

@@ -19,12 +19,15 @@ public class ClinicaDental {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+         ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
-        int opcion = -1;
+        int opcion = -1, opcion2 = -1;
         Scanner in = new Scanner(System.in);
 
         do {
             mostrarMenuPrincipal();
+            in = new Scanner(System.in, "ISO-8859-1");
             opcion = in.nextInt();
             if (opcion < 0 || opcion > 3) {
                 System.out.println("\n Opcion incorrecta \n");
@@ -38,7 +41,14 @@ public class ClinicaDental {
                     mostrarMenuGestionPaciente();
                     break;
                 case 2:
-                   mostrarMenuGestionEmpleados();
+                    mostrarMenuGestionEmpleados();
+                    in = new Scanner(System.in, "ISO-8859-1");
+                    opcion2 = in.nextInt();
+                    if (opcion2 < 0 || opcion2 > 3) {
+                            System.out.println("Opción incorrecta");
+                            continue;
+                        }
+                    gestionEmpleados (opcion2, empleados);
                     break;
                 case 3:
                     break;
@@ -78,16 +88,16 @@ public class ClinicaDental {
                 case 0:
                     continue;
                 case 1:
-                  //  Paciente.verPacientes();
+                    //  Paciente.verPacientes();
                     break;
                 case 2:
                     Paciente.nuevoPaciente();
                     break;
                 case 3:
-                  //  Paciente.buscarPaciente();
+                    //  Paciente.buscarPaciente();
                     break;
                 case 4:
-                  //  Paciente.verHistorial();
+                    //  Paciente.verHistorial();
                     break;
 
             }
@@ -96,47 +106,102 @@ public class ClinicaDental {
 
     }
 
-         private static void mostrarMenuGestionEmpleados() {
+    private static void mostrarMenuGestionEmpleados() {
         System.out.println("Pulsa 1 para ver empleados.");
-        System.out.println("Pulsa 2 para crear nuevo empleado.");
-        System.out.println("Pulsa 3 para buscar empleado.");
+        System.out.println("Pulsa 2 para buscar empleado.");
+        System.out.println("Pulsa 3 para crear nuevo empleado.");
         System.out.println("Pulsa 0 para salir del menu.");
         
-        int opcion = -1;
+       /** int opcion = -1;
         Scanner in = new Scanner(System.in);
-
         do {
 
             opcion = in.nextInt();
-            if (opcion < 0 || opcion > 3) {
+            if (opcion < 0 || opcion > 4) {
                 System.out.println("\n Opcion incorrecta \n");
                 continue;
-                
             }
+
             switch (opcion) {
                 case 0:
                     continue;
                 case 1:
-                    
+                    //  Paciente.verPacientes();
                     break;
                 case 2:
-                    Empleado.nuevoEmpleado();
+                    Paciente.nuevoPaciente();
                     break;
                 case 3:
-                   // Empleado.buscarEmpleados(empleados);                           
+                    //  Paciente.buscarPaciente();
                     break;
                 case 4:
-                    
+                    //  Paciente.verHistorial();
                     break;
 
             }
 
-        } while (opcion < 0 || opcion > 3);
+        } while (opcion < 0 || opcion > 4);*/
 
     }
-   
+
+
+
+private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) {
+        Scanner in;
+        int idEmpleado;
+        Empleado e;
+        switch (opcion) {
+            case 0:
+                break;
+            case 1:
+                System.out.println("Ha pulsado ver datos de empleados.");
+                Empleado.verEmpleado(empleados);
+                break;
+            case 2:
+                System.out.println("Ha pulsado buscar empleados.");
+                Empleado.buscarEmpleados(empleados);
+                break;
+            case 3:
+                System.out.println("Ha pulsado crear un nuevo empleado.");
+                int opcion2 = -1;
+                in = new Scanner(System.in, "ISO-8859-1");
+                do {
+                    System.out.println("Pulse 1 para nuevo secretario/a.");
+                    System.out.println("Pulse 2 para nuevo enfermero/a.");
+                    System.out.println("Pulse 3 para nuevo cirujano/a.");
+                    System.out.println("Pulse 0 para VOLVER.");
+                    opcion2 = in.nextInt();
+                    if (opcion2 < 0 || opcion2 > 3) {
+                        System.out.println("Opción incorrecta.");
+                        continue;
+                    }
+                    switch (opcion2) {
+                        case 0:
+                            break;
+                        case 1:
+                            Secretariado nuevoSecretariado = Secretariado.nuevoSecretariado();
+                            empleados.add(nuevoSecretariado);
+                            System.out.println("Secretario/a creado correctamente con id=" + nuevoSecretariado.getId());
+                            break;
+                        case 2:
+                            Enfermeria nuevoEnfermeria = Enfermeria.nuevoEnfermeria();
+                            empleados.add(nuevoEnfermeria);
+                            System.out.println("Enfermero/a creado correctamente con id=" + nuevoEnfermeria.getId());
+                            break;
+                        case 3:
+                            Cirujano nuevoCirujano = Cirujano.nuevoCirujano();
+                            empleados.add(nuevoCirujano);
+                            System.out.println("Cirujano/a creado correctamente con id=" + nuevoCirujano.getId());
+                            break;
+                        
+                    }
+                } while (opcion2 != 0);
+                break;
+           
+                        }
+    }
 
     private static void mostrarMenuGestionCitas() {
 
     }
- }
+}

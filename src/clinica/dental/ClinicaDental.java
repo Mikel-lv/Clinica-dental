@@ -103,13 +103,13 @@ public class ClinicaDental {
                     //  Paciente.buscarPaciente();
                    
                      System.out.println("Ha pulsado buscar paciente.");
-     //                Paciente.buscarPacientes(pacientes);
+                     Paciente.buscarPacientes();
                     
                     break;
                 case 4:
                     //  Paciente.verHistorial();
                     System.out.println("Ha pulsado buscar historial de paciente.");
-      //              Paciente.historialPacientes(pacientes);
+                    //Paciente.historialPacientes();
                     
                     break;
 
@@ -183,7 +183,7 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
                     System.out.println("Pulse 1 para nuevo secretario/a.");
                     System.out.println("Pulse 2 para nuevo enfermero/a.");
                     System.out.println("Pulse 3 para nuevo cirujano/a.");
-                    System.out.println("Pulse 0 para VOLVER.");
+                    System.out.println("Pulse 0 para salir del menu.");
                     opcion2 = in.nextInt();
                     if (opcion2 < 0 || opcion2 > 3) {
                         System.out.println("Opción incorrecta.");

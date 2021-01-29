@@ -89,15 +89,28 @@ public class ClinicaDental {
                     continue;
                 case 1:
                     //  Paciente.verPacientes();
+                    System.out.println("Ha pulsado ver pacientes.");
+                    for (int x=0; x<Utilidades.numPacientes; x++) {
+                    System.out.println(Utilidades.PACIENTES[x]);
+                    }
+                    
+                    
                     break;
                 case 2:
                     Paciente.nuevoPaciente();
                     break;
                 case 3:
                     //  Paciente.buscarPaciente();
+                   
+                     System.out.println("Ha pulsado buscar paciente.");
+                     Paciente.buscarPacientes(pacientes);
+                    
                     break;
                 case 4:
                     //  Paciente.verHistorial();
+                    System.out.println("Ha pulsado buscar historial de paciente.");
+                    Paciente.historialPacientes(pacientes);
+                    
                     break;
 
             }

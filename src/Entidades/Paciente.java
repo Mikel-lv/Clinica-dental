@@ -149,5 +149,258 @@ public class Paciente {
 //        nuevoPaciente.setHistorial(in.nextLine());
         return nuevoPaciente;
     }
+    
+    //Metodo para crear un nuevopaciente
+    public static Paciente nuevoPacie() {
+        Paciente nuevoPaciente =  Paciente.nuevoPaciente();
+        Paciente ret = new Paciente(nuevoPaciente);
+        Scanner in = new Scanner(System.in);
+        
+        return ret;
+    }
+    
+    
+    
+    
+    //Lo he intentado atm: Sebastián :_(
+    
+        public static void historialPacientes(ArrayList<Paciente> pacientes) {
+        Paciente buscado;
+        ArrayList<Paciente> encontrados;
+        Scanner in;
+        int opcion = -1;
+        do {
+            buscado = null;
+            encontrados = new ArrayList<Paciente>();
+            in = new Scanner(System.in, "ISO-8859-1");
+            System.out.println("Pulse 1 para buscar por Id:");
+            System.out.println("Pulse 2 para buscar por nombre:");
+            System.out.println("Pulse 3 para buscar por apellidos:");
+            System.out.println("Pulse 4 para buscar por DNI:");
+            System.out.println("Pulse 0 para VOLVER.");
+            opcion = in.nextInt();
+            if (opcion < 0 || opcion > 4) {
+                System.out.println("Opción incorrecta.");
+                continue;
+            }
+            in = new Scanner(System.in, "ISO-8859-1");
+            switch (opcion) {
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Introduzca el Id del paciente:");
+                    int idPac = in.nextInt();
+                    buscado = Paciente.buscarPacientePorId(idPac, pacientes);
+                    if (buscado != null) {
+                        System.out.print("Paciente encontrado: ");
+                        System.out.println(buscado.getHistorial());
+                    } else {
+                        System.out.println("Paciente con id=" + idPac + " NO ENCONTRADO.");
+                    }
+                    break;
+                case 2:
+                    System.out.println("Introduzca el nombre del paciente:");
+                    String nomPac = in.nextLine();
+                    encontrados = Paciente.buscarPacientePorNombre(nomPac, pacientes);
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Paciente e : encontrados) {
+                            System.out.println(e.getHistorial());
+                        }
+                    } else {
+                        System.out.println("Paciente con nombre=" + nomPac + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                case 3:
+                    System.out.println("Introduzca el apellido del paciente:");
+                    String apellPac = in.nextLine();
+                    encontrados = Paciente.buscarPacientePorApellido(apellPac, pacientes);
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Paciente e : encontrados) {
+                            System.out.println(e.getHistorial());
+                        }
+                    } else {
+                        System.out.println("Paciente con apellido=" + apellPac + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                case 4:
+                    System.out.println("Introduzca el DNI del paciente:");
+                    String dniPac = in.nextLine();
+                    encontrados = Paciente.buscarPacientePorDNI(dniPac, pacientes);
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Paciente e : encontrados) {
+                            System.out.println(e.getHistorial());
+                        }
+                    } else {
+                        System.out.println("Paciente con DNI=" + dniPac + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                default:
+                    break;
+            }
+        } while (opcion != 0);
+
+    }
+
+    public static Paciente buscarPacientePorId(int idPaciente, ArrayList<Paciente> pacientes) {
+        Paciente ret = null;
+        for (Paciente e : pacientes) {
+            if (e.getId() == idPaciente) {
+                ret = e;
+                break;
+            }
+        }
+        return ret;
+    }
+
+    public static ArrayList<Paciente> buscarPacientePorNombre(String nomPaciente, ArrayList<Paciente> pacientes) {
+        ArrayList<Paciente> ret = new ArrayList<Paciente>();
+        for (Paciente e : pacientes) {
+            if (Utilidades.removeDiacriticalMarks(e.getNombre().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(nomPaciente.toLowerCase()))) {
+                ret.add(e);
+            }
+            if (e.getNombre().toLowerCase().contains(nomPaciente.toLowerCase())) {
+                if (!ret.contains(e)) {
+                    ret.add(e);
+                }
+            }
+        }
+        return ret;
+
+    }
+
+    public static ArrayList<Paciente> buscarPacientePorApellido(String apellPaciente, ArrayList<Paciente> pacientes) {
+        ArrayList<Paciente> ret = new ArrayList<Paciente>();
+        for (Paciente e : pacientes) {
+            if (Utilidades.removeDiacriticalMarks(e.getApellidos().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(apellPaciente.toLowerCase()))) {
+                ret.add(e);
+            }
+            if (e.getApellidos().toLowerCase().contains(apellPaciente.toLowerCase())) {
+                if (!ret.contains(e)) {
+                    ret.add(e);
+                }
+            }
+        }
+        return ret;
+
+    }
+
+    public static ArrayList<Paciente> buscarPacientePorDNI(String dniPaciente, ArrayList<Paciente> pacientes) {
+        ArrayList<Paciente> ret = new ArrayList<Paciente>();
+        for (Paciente e : pacientes) {
+            if (Utilidades.removeDiacriticalMarks(e.getDNI().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(dniPaciente.toLowerCase()))) {
+                ret.add(e);
+            }
+            if (e.getDNI().toLowerCase().contains(dniPaciente.toLowerCase())) {
+                if (!ret.contains(e)) {
+                    ret.add(e);
+                }
+            }
+        }
+        return ret;
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+     public static void buscarPacientes(ArrayList<Paciente> pacientes) {
+        Paciente buscado;
+        ArrayList<Paciente> encontrados;
+        Scanner in;
+        int opcion = -1;
+        do {
+            buscado = null;
+            encontrados = new ArrayList<Paciente>();
+            in = new Scanner(System.in, "ISO-8859-1");
+            System.out.println("Pulse 1 para buscar por Id:");
+            System.out.println("Pulse 2 para buscar por nombre:");
+            System.out.println("Pulse 3 para buscar por apellidos:");
+            System.out.println("Pulse 4 para buscar por DNI:");
+            System.out.println("Pulse 0 para VOLVER.");
+            opcion = in.nextInt();
+            if (opcion < 0 || opcion > 4) {
+                System.out.println("Opción incorrecta.");
+                continue;
+            }
+            in = new Scanner(System.in, "ISO-8859-1");
+            switch (opcion) {
+                case 0:
+                    break;
+                case 1:
+                    System.out.println("Introduzca el Id del paciente:");
+                    int idPac = in.nextInt();
+                    buscado = Paciente.buscarPacientePorId(idPac, pacientes);
+                    if (buscado != null) {
+                        System.out.print("Paciente encontrado: ");
+                        System.out.println(buscado.getId() + ". " + buscado.getNombre()+ " (" + buscado.getApellidos() + ")" + buscado.getDireccion() + buscado.getHistorial() + buscado.getClass().getSimpleName());
+                    } else {
+                        System.out.println("Paciente con id=" + idPac + " NO ENCONTRADO.");
+                    }
+                    break;
+                case 2:
+                    System.out.println("Introduzca el nombre del paciente:");
+                    String nomPac = in.nextLine();
+                    encontrados = Paciente.buscarPacientePorNombre(nomPac, pacientes);
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Paciente e : encontrados) {
+                            System.out.println(e.getId() + ". " + e.getNombre() + " (" + e.getApellidos() + ")" + e.getDireccion() + e.getHistorial() + e.getClass().getSimpleName());
+                        }
+                    } else {
+                        System.out.println("Paciente con nombre=" + nomPac + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                case 3:
+                    System.out.println("Introduzca el apellido del paciente:");
+                    String apellPac = in.nextLine();
+                    encontrados = Paciente.buscarPacientePorApellido(apellPac, pacientes);
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Paciente e : encontrados) {
+                            System.out.println(e.getId() + ". " + e.getNombre() + " (" + e.getApellidos() + ")"  + e.getDireccion() + e.getHistorial() + e.getClass().getSimpleName());
+                        }
+                    } else {
+                        System.out.println("Paciente con apellido=" + apellPac + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                case 4:
+                    System.out.println("Introduzca el DNI del paciente:");
+                    String dniPac = in.nextLine();
+                    encontrados = Paciente.buscarPacientePorDNI(dniPac, pacientes);
+                    if (encontrados.size() > 0) {
+                        System.out.println("Hay coincidencias: ");
+                        for (Paciente e : encontrados) {
+                            System.out.println(e.getId() + ". " + e.getNombre() + " (" + e.getApellidos() + ")"  + e.getDireccion() + e.getHistorial() + e.getClass().getSimpleName());
+                        }
+                    } else {
+                        System.out.println("Paciente con DNI=" + dniPac + " NO ENCONTRADO.");
+                    }
+                    System.out.println("");
+                    break;
+
+                default:
+                    break;
+            }
+        } while (opcion != 0);
+
+    }
+
 }
 

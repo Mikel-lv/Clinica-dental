@@ -106,6 +106,14 @@ public class Intervencion extends Cita {
         this.cirujanos = cirujanos;
         this.enfermeros = enfermeros;
     }
+    
+    public Intervencion(Cita c, int duracion, ArrayList<Enfermeria> enfermeros, ArrayList<Cirujano> cirujanos){
+        super(c);
+        this.duracion = duracion;
+        this.cirujanos = cirujanos;
+        this.enfermeros = enfermeros;      
+               
+    }
 
     public Intervencion(Intervencion e) {
         this.duracion = e.duracion;

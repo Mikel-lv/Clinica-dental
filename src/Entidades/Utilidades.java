@@ -94,7 +94,16 @@ public class Utilidades {
     };
     public static final int numRevisiones = REVISIONES.length;
 
-    public static final Intervencion INTERVENCIONES[] = { //   new Intervencion(1, Enfermeria.convertir(new Enfermeria[]{SECRETARIADOS[0]})),
+    public static final Intervencion INTERVENCIONES[] = { 
+        //int duracion, long id, Date fecha, char rango_horario, Time hora, Secretariado secretariado, ArrayList<Enfermeria> enfermeros, ArrayList<Cirujano> cirujanos)
+        //Cita c, int duracion, ArrayList<Enfermeria> enfermeros, ArrayList<Cirujano> cirujanos
+    //   new Intervencion(1, Enfermeria.convertir(new Enfermeria[]{SECRETARIADOS[0]})),
+        new Intervencion(CITAS[0], 50, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1})),
+        new Intervencion(CITAS[1], 50, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 2}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1})),
+        new Intervencion(CITAS[2], 50, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 2}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1})),
+        new Intervencion(CITAS[3], 50, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{2, 4}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1})),
+        new Intervencion(CITAS[4], 50, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{2, 3}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1})),
+        new Intervencion(CITAS[5], 50, Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 4}), Cirujano.arrayde(Cirujano.convertir(CIRUJANOS), new int[]{1}))
     };
 
     public static final int numIntervenciones = INTERVENCIONES.length;

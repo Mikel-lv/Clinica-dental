@@ -264,4 +264,11 @@ public class Empleado {
         return ret;
 
     }
+    
+     public static void verEmpleado(ArrayList<Empleado> empleados) {
+        System.out.println("Listado de empleados");
+        for (Empleado e : empleados) {
+            System.out.println(e.getId() + ". " + e.getNombre() + " (" + e.getClass().getSimpleName() + ")");
+        }
+}
 }

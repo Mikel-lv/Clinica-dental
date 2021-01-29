@@ -60,6 +60,24 @@ public class Enfermeria extends Empleado{
         return ret;
     }
     
+    
+    public static ArrayList<Enfermeria> arrayde(ArrayList<Enfermeria> lista, int[] ids) {
+        ArrayList<Enfermeria> ret = new ArrayList<Enfermeria>();
+         for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Enfermeria) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+        
+        }
+        
+        
+       
+    
     public static final ArrayList<Enfermeria> convertir(Enfermeria[] array) {
         ArrayList<Enfermeria> ret = new ArrayList<Enfermeria>();
         for (Enfermeria i : array) {

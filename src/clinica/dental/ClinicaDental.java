@@ -103,13 +103,13 @@ public class ClinicaDental {
                     //  Paciente.buscarPaciente();
                    
                      System.out.println("Ha pulsado buscar paciente.");
-                     Paciente.buscarPacientes(pacientes);
+     //                Paciente.buscarPacientes(pacientes);
                     
                     break;
                 case 4:
                     //  Paciente.verHistorial();
                     System.out.println("Ha pulsado buscar historial de paciente.");
-                    Paciente.historialPacientes(pacientes);
+      //              Paciente.historialPacientes(pacientes);
                     
                     break;
 
@@ -164,11 +164,12 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
         int idEmpleado;
         Empleado e;
         switch (opcion) {
-            case 0:
+            case 0: 
+                mostrarMenuPrincipal();                
                 break;
             case 1:
                 System.out.println("Ha pulsado ver datos de empleados.");
-                Empleado.verEmpleado(empleados);
+                Empleado.verEmpleado();
                 break;
             case 2:
                 System.out.println("Ha pulsado buscar empleados.");

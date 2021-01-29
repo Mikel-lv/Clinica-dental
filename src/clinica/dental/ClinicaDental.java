@@ -165,7 +165,7 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
         Empleado e;
         switch (opcion) {
             case 0: 
-                mostrarMenuPrincipal();                
+                System.out.println("Ha salido del menú");
                 break;
             case 1:
                 System.out.println("Ha pulsado ver datos de empleados.");
@@ -191,6 +191,7 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
                     }
                     switch (opcion2) {
                         case 0:
+                            System.out.println("Ha salido del menú");
                             break;
                         case 1:
                             Secretariado nuevoSecretariado = Secretariado.nuevoSecretariado();

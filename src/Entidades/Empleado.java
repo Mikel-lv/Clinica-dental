@@ -140,7 +140,7 @@ public class Empleado {
             System.out.println("Pulse 2 para buscar por nombre:");
             System.out.println("Pulse 3 para buscar por apellidos:");
             System.out.println("Pulse 4 para buscar por NIF:");
-            System.out.println("Pulse 0 para VOLVER.");
+            System.out.println("Pulse 0 para salir del menú.");
             opcion = in.nextInt();
             if (opcion < 0 || opcion > 4) {
                 System.out.println("Opción incorrecta.");
@@ -149,6 +149,7 @@ public class Empleado {
             in = new Scanner(System.in, "ISO-8859-1");
             switch (opcion) {
                 case 0:
+                    System.out.println("Ha salido del menú");
                     break;
                 case 1:
                     System.out.println("Introduzca el Id del empleado:");

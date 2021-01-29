@@ -119,6 +119,13 @@ public class Empleado {
         nuevoEmpleado.setDireccion(in.nextLine());
         return nuevoEmpleado;
     }
+    public static final ArrayList<Empleado> convertir(Empleado[] array) {
+        ArrayList<Empleado> ret = new ArrayList<Empleado>();
+        for (Empleado i : array) {
+            ret.add((Empleado) i);
+        }
+        return ret;
+    }
 
     public static void buscarEmpleados(ArrayList<Empleado> empleados) {
         Empleado buscado;
@@ -208,7 +215,7 @@ public class Empleado {
 
     public static Empleado buscarEmpleadoPorId(int idEmpleado, ArrayList<Empleado> empleados) {
         Empleado ret = null;
-        for (Empleado e : empleados) {
+        for (Empleado e : Empleado.convertir(Utilidades.EMPLEADOS)) {
             if (e.getId() == idEmpleado) {
                 ret = e;
                 break;
@@ -219,7 +226,7 @@ public class Empleado {
 
     public static ArrayList<Empleado> buscarEmpleadoPorNombre(String nomEmpleado, ArrayList<Empleado> empleados) {
         ArrayList<Empleado> ret = new ArrayList<Empleado>();
-        for (Empleado e : empleados) {
+        for (Empleado e : Empleado.convertir(Utilidades.EMPLEADOS)) {
             if (Utilidades.removeDiacriticalMarks(e.getNombre().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(nomEmpleado.toLowerCase()))) {
                 ret.add(e);
             }
@@ -235,7 +242,7 @@ public class Empleado {
 
     public static ArrayList<Empleado> buscarEmpleadoPorApellido(String apellEmpleado, ArrayList<Empleado> empleados) {
         ArrayList<Empleado> ret = new ArrayList<Empleado>();
-        for (Empleado e : empleados) {
+        for (Empleado e : Empleado.convertir(Utilidades.EMPLEADOS)) {
             if (Utilidades.removeDiacriticalMarks(e.getApellidos().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(apellEmpleado.toLowerCase()))) {
                 ret.add(e);
             }
@@ -251,7 +258,7 @@ public class Empleado {
 
     public static ArrayList<Empleado> buscarEmpleadoPorNIF(String nifEmpleado, ArrayList<Empleado> empleados) {
         ArrayList<Empleado> ret = new ArrayList<Empleado>();
-        for (Empleado e : empleados) {
+        for (Empleado e : Empleado.convertir(Utilidades.EMPLEADOS)) {
             if (Utilidades.removeDiacriticalMarks(e.getNIF().toLowerCase()).contains(Utilidades.removeDiacriticalMarks(nifEmpleado.toLowerCase()))) {
                 ret.add(e);
             }

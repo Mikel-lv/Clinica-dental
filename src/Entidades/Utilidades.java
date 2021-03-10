@@ -80,7 +80,6 @@ public class Utilidades {
         new Cobro(8, 60, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter))),
         new Cobro(9, 50, Date.valueOf(LocalDate.parse("22/12/2020", dateFormatter)))
     };
-        
 
     public static final int numCobros = COBROS.length;
 
@@ -150,27 +149,24 @@ public class Utilidades {
         new Cita(10, Date.valueOf(LocalDate.parse("06/12/2020", dateFormatter)), 'T', Time.valueOf(LocalTime.parse("18:45:00", timeFormatter)), SECRETARIOS[2], Medicamento.arrayde(Medicamento.convertir(MEDICAMENTOS), new int[]{2})),
         new Cita(11, Date.valueOf(LocalDate.parse("30/11/2020", dateFormatter)), 'T', Time.valueOf(LocalTime.parse("18:45:00", timeFormatter)), SECRETARIOS[2], Medicamento.arrayde(Medicamento.convertir(MEDICAMENTOS), new int[]{2})),
         new Cita(12, Date.valueOf(LocalDate.parse("30/12/2020", dateFormatter)), 'T', Time.valueOf(LocalTime.parse("18:45:00", timeFormatter)), SECRETARIOS[2], Medicamento.arrayde(Medicamento.convertir(MEDICAMENTOS), new int[]{2})),
-        new Cita(13, Date.valueOf(LocalDate.parse("30/12/2020", dateFormatter)), 'T', Time.valueOf(LocalTime.parse("18:45:00", timeFormatter)), SECRETARIOS[2], Medicamento.arrayde(Medicamento.convertir(MEDICAMENTOS), new int[]{2})),
-        
-        };
-        
+        new Cita(13, Date.valueOf(LocalDate.parse("30/12/2020", dateFormatter)), 'T', Time.valueOf(LocalTime.parse("18:45:00", timeFormatter)), SECRETARIOS[2], Medicamento.arrayde(Medicamento.convertir(MEDICAMENTOS), new int[]{2})),};
+
     public static final int numCitas = CITAS.length;
 
     public static final Tratamiento TRATAMIENTOS[] = {
         new Tratamiento(1, "Revisión + empaste", Date.valueOf(LocalDate.parse("22/09/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{1})),
-        new Tratamiento(2, "Limpieza + blanqueamiento", Date.valueOf(LocalDate.parse("29/09/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{2,3})),
+        new Tratamiento(2, "Limpieza + blanqueamiento", Date.valueOf(LocalDate.parse("29/09/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{2, 3})),
         new Tratamiento(3, "Limpieza + empaste", Date.valueOf(LocalDate.parse("1/10/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{4})),
         new Tratamiento(4, "Endodoncia", Date.valueOf(LocalDate.parse("13/10/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{5})),
         new Tratamiento(5, "Extracción", Date.valueOf(LocalDate.parse("20/10/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{6})),
         new Tratamiento(6, "Revision periódica", Date.valueOf(LocalDate.parse("30/10/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{7})),
-        new Tratamiento(7, "Implante", Date.valueOf(LocalDate.parse("25/11/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{8,9,10})),
-        new Tratamiento(8, "Ortodoncia", Date.valueOf(LocalDate.parse("30/11/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{11,12})),
+        new Tratamiento(7, "Implante", Date.valueOf(LocalDate.parse("25/11/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{8, 9, 10})),
+        new Tratamiento(8, "Ortodoncia", Date.valueOf(LocalDate.parse("30/11/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{11, 12})),
         new Tratamiento(9, "Ortodoncia", Date.valueOf(LocalDate.parse("12/12/2020", dateFormatter)), true, COBROS[1], INFORMES[1], Cita.arrayde(Cita.convertir(CITAS), new int[]{13}))};
 
     public static final int numTratmamiento = TRATAMIENTOS.length;
 
-    public static final Intervencion INTERVENCIONES[] = {
-        /*Cita c, int duracion, ArrayList<Enfermeria> enfermeros, ArrayList<Cirugia> cirujanos
+    public static final Intervencion INTERVENCIONES[] = { /*Cita c, int duracion, ArrayList<Enfermeria> enfermeros, ArrayList<Cirugia> cirujanos
         new Intervencion(CITAS[0], Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}, Cirugia.arrayde(Cirugia.convertir(CIRUJANOS), new int[]{1, 3})),
         new Intervencion(CITAS[1], Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}, Cirugia.arrayde(Cirugia.convertir(CIRUJANOS), new int[]{1, 3})),
         new Intervencion(CITAS[2], Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}, Cirugia.arrayde(Cirugia.convertir(CIRUJANOS), new int[]{1, 3})),
@@ -180,36 +176,30 @@ public class Utilidades {
         new Intervencion(CITAS[8], Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}, Cirugia.arrayde(Cirugia.convertir(CIRUJANOS), new int[]{1, 3})),
         new Intervencion(CITAS[11], Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}, Cirugia.arrayde(Cirugia.convertir(CIRUJANOS), new int[]{1, 3})),
         new Intervencion(CITAS[13], Enfermeria.arrayde(Enfermeria.convertir(ENFERMEROS), new int[]{1, 3}, Cirugia.arrayde(Cirugia.convertir(CIRUJANOS), new int[]{1, 3})),
-*/
-    };
+     */};
     public static final int numIntervencion = INTERVENCIONES.length;
-    
+
     public static final Revision REVISIONES[] = {
         //String anotacion, Cirugia cirugia, Cita c
-        new Revision ("Nada a resaltar", CIRUJANOS[0], CITAS[6]),
-        new Revision ("Nada a resaltar", CIRUJANOS[2], CITAS[9]),
-        new Revision ("Nada a resaltar", CIRUJANOS[1], CITAS[10]),
-        new Revision ("Nada a resaltar", CIRUJANOS[3], CITAS[12]),
-        
-    };
+        new Revision("Nada a resaltar", CIRUJANOS[0], CITAS[6]),
+        new Revision("Nada a resaltar", CIRUJANOS[2], CITAS[9]),
+        new Revision("Nada a resaltar", CIRUJANOS[1], CITAS[10]),
+        new Revision("Nada a resaltar", CIRUJANOS[3], CITAS[12]),};
 
     public static final Paciente PACIENTES[] = {
         //long id, String nombre, String apellido, String DNI,  String direccion, ArrayList<Tratamiento> tratamientos, ArrayList<Cita> citas, Historial historial
-        new Paciente (1, "Susana", "Menendez", "22740599S", "Barrio Llatazos, 13", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{1}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (2, "Jorge", "Lorenzo", "57896354T", "B/ Lavapies, 79", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{2}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (3, "Elsa", "Oslé", "22475599F", "C/ Julio Urquijo,33", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{3}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (4, "Eder", "Aurrere", "72698534S",  "C/ Dr. Areilza, 3", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{4}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (5, "Miguel", "Sainz", "75698532T",  "Avda. Sabino Arana, 9", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{5}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (6, "Pablo", "Diez", "12365479E",  "C/ julio mendoza, 66", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{6}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (7, "Ana", "Vazquez", "632598741S",  "C/ Santander, 1", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{7}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (8, "Hugo", "De Miguel", "423698741F",  "C/ republica de perú, 12", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{8}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        new Paciente (9, "Daniel", "Garcia", "365987456I",  "C/ Diego Lopez de Haro, 12", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{9}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
-        
-    };
-     public static final int numPacientes = PACIENTES.length;
-     
-     
-     
+        new Paciente(1, "Susana", "Menendez", "22740599S", "Barrio Llatazos, 13", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{1}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(2, "Jorge", "Lorenzo", "57896354T", "B/ Lavapies, 79", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{2}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(3, "Elsa", "Oslé", "22475599F", "C/ Julio Urquijo,33", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{3}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(4, "Eder", "Aurrere", "72698534S", "C/ Dr. Areilza, 3", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{4}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(5, "Miguel", "Sainz", "75698532T", "Avda. Sabino Arana, 9", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{5}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(6, "Pablo", "Diez", "12365479E", "C/ julio mendoza, 66", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{6}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(7, "Ana", "Vazquez", "632598741S", "C/ Santander, 1", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{7}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(8, "Hugo", "De Miguel", "423698741F", "C/ republica de perú, 12", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{8}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),
+        new Paciente(9, "Daniel", "Garcia", "365987456I", "C/ Diego Lopez de Haro, 12", Tratamiento.arrayde(Tratamiento.convertir(TRATAMIENTOS), new int[]{9}), Cita.arrayde(Cita.convertir(CITAS), new int[]{1, 3}), HISTORIALES[1]),};
+    public static final int numPacientes = PACIENTES.length;
+
+    //fecha
     //fecha
     public static class Fecha {
 
@@ -227,6 +217,30 @@ public class Utilidades {
             this.dia = d;
         }
 
+        public int getAnio() {
+            return anio;
+        }
+
+        public void setAnio(int anio) {
+            this.anio = anio;
+        }
+
+        public int getMes() {
+            return mes;
+        }
+
+        public void setMes(int mes) {
+            this.mes = mes;
+        }
+
+        public int getDia() {
+            return dia;
+        }
+
+        public void setDia(int dia) {
+            this.dia = dia;
+        }
+
         public Date conversorFecha() {
             java.sql.Date ret = new Date(this.anio, this.mes, this.dia);
             return ret;
@@ -240,81 +254,149 @@ public class Utilidades {
                 System.out.println("Día: ");
                 d = in.nextInt();
             } while (d <= 0 || d > 31);
+            ret.setDia(d);
             int m = 0;
             do {
                 System.out.println("Mes: ");
                 m = in.nextInt();
             } while (m <= 0 || m > 12);
-
+            ret.setMes(m);
             int y = 0;
             do {
                 System.out.println("Año: ");
-                m = in.nextInt();
-            } while (m <= 2000);
-
+                y = in.nextInt();
+            } while (y <= 2000);
+            ret.setAnio(y);
             return ret;
 
         }
-
-        //hora
-        public static class Hora {
-
-            private int hora;
-            private int minuto;
-            private int segundo;
-
-            public Hora() {
-                Time hoy = Time.valueOf(LocalTime.now());
-            }
-
-            public Hora(int h, int m, int s) {
-                this.hora = h;
-                this.minuto = m;
-                this.segundo = s;
-            }
-
-            public Time conversorFecha() {
-                java.sql.Time ret = new Time(this.hora, this.minuto, this.segundo);
-                return ret;
-            }
-
-            public static Hora nuevaHora() {
-                Hora ret = new Hora();
-                Scanner in = new Scanner(System.in);
-                int h = 0;
-                do {
-                    System.out.println("Hora: ");
-                    h = in.nextInt();
-                } while (h <= 0 || h > 23);
-                int m = 0;
-                do {
-                    System.out.println("Minutos: ");
-                    m = in.nextInt();
-                } while (m <= 0 || m > 59);
-
-                int s = 0;
-                do {
-                    System.out.println("Segundos: ");
-                    s = in.nextInt();
-                } while (s <= 59);
-
-                return ret;
-
-            }
-        }
-
-        //metodos para hacer validaciones
-        public static boolean contieneDigitos(String nombre) {
-            boolean ret = true;
-
-            return ret;
-        }
-
-        public static boolean contieneCaracteresEspeciales(String nombre) {
-            boolean ret = true;
-
-            return ret;
-        }
-
     }
+
+    //hora
+    public static class Hora {
+
+        private int hora;
+        private int minuto;
+        private int segundo;
+
+        public int getHora() {
+            return hora;
+        }
+
+        public void setHora(int hora) {
+            this.hora = hora;
+        }
+
+        public int getMinuto() {
+            return minuto;
+        }
+
+        public void setMinuto(int minuto) {
+            this.minuto = minuto;
+        }
+
+        public int getSegundo() {
+            return segundo;
+        }
+
+        public void setSegundo(int segundo) {
+            this.segundo = segundo;
+        }
+
+        public Hora() {
+            Time hoy = Time.valueOf(LocalTime.now());
+        }
+
+        public Hora(int h, int m, int s) {
+            this.hora = h;
+            this.minuto = m;
+            this.segundo = s;
+        }
+
+        public Time conversorFecha() {
+            java.sql.Time ret = new Time(this.hora, this.minuto, this.segundo);
+            return ret;
+        }
+
+        public static Hora nuevaHora() {
+            Hora ret = new Hora();
+            Scanner in = new Scanner(System.in);
+            int h = 0;
+            do {
+                System.out.println("Hora: ");
+                h = in.nextInt();
+            } while (h <= 0 || h > 23);
+            ret.setHora(h);
+            int m = 0;
+            do {
+                System.out.println("Minutos: ");
+                m = in.nextInt();
+            } while (m <= 0 || m > 59);
+            ret.setHora(m);
+            int s = 0;
+            do {
+                System.out.println("Segundos: ");
+                s = in.nextInt();
+            } while (s <= 59);
+            ret.setHora(s);
+            return ret;
+
+        }
+    }
+
+    //METODOS PARA HACER VALIDACIONES
+    public static boolean validarNombre(String nombre) {
+        boolean ret = true;
+        if (nombre.isEmpty()) {
+            ret = false;
+        }
+        if (nombre.length() < 1 || nombre.length() > 20) {
+            ret = false;
+        }
+        for (char c : nombre.toCharArray()) {
+            if (Character.isDigit(c) || (!Character.isLetter(c) && c != ' '));
+            ret = false;
+            break;
+        }
+        return ret;
+    }
+
+    public static boolean validarApellido(String apellido) {
+        boolean ret = true;
+        if (apellido.isEmpty()) {
+            ret = false;
+        }
+        if (apellido.length() < 1 || apellido.length() > 20) {
+            ret = false;
+        }
+        for (char c : apellido.toCharArray()) {
+            if (Character.isDigit(c) || (!Character.isLetter(c) && c != ' '));
+            ret = false;
+            break;
+        }
+        return ret;
+    }
+
+    public static boolean validaTlfn(String tlfn) {
+        boolean ret = true;
+        if (tlfn.isEmpty()) {
+            ret = false;
+        }
+        if (tlfn.length() != 9) {
+            ret = false;
+        }
+        if (!tlfn.matches("[0-9]+")) {
+            ret = false;
+        }
+        return ret;
+    }
+    
+    public static boolean validarImporte(double importe){
+        boolean ret = true;
+         if (importe <= 0) {
+             ret = false;
+         }                
+        return ret;
+    }
+
 }

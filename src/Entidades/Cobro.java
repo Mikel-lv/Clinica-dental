@@ -5,6 +5,7 @@
  */
 package Entidades;
 
+import static Entidades.InformeGlobal.nextIdInforme;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -66,18 +67,27 @@ public class Cobro {
     public static Cobro nuevoCobro() {
         Cobro ret = new Cobro();
         Scanner in = new Scanner(System.in);
-        System.out.println("Introduce el Id del cobro:");
-        int identificador = in.nextInt();
-        ret.setId(identificador);
+        long id = nextIdCobro();
+        ret.setId(id);
         System.out.println("Introduce la fecha fin del cobro:");
         Date fecha = Utilidades.Fecha.nuevaFecha().conversorFecha();
         ret.setFechaFin(fecha);
         System.out.println("Introduce el importe:");
-        double importe = in.nextDouble();
-        ret.setImporte(importe);
+        do {
+            System.out.println("Introduce el importe del cobro: ");
+            double importe = in.nextDouble();
+            if (!Utilidades.validarImporte(importe)) {
+                System.out.println("Cobro introducido inválido");
+            }
+        }
+            while(!Utilidades.validarImporte(importe));
+            ret.setImporte(importe);
 
-        return ret;
-    }
+            return ret;                   
+             }
+        
+        
+   
 
     public static long nextIdCobro() {
         long ret = 0;
@@ -88,7 +98,6 @@ public class Cobro {
         return ret + 1;
     }
 
-    
     /**
      * Función que se le pasa una lista ArrayList<code>Cobro</code> y un array
      * de identificadores, y devuelve una sublista con los Cobros cuyos ids
@@ -98,7 +107,6 @@ public class Cobro {
      * @param ids array de ids de Cobros
      * @return ArrayList<code>Cobros</code>
      */
-    
     public static ArrayList<Cobro> arrayde(ArrayList<Cobro> lista, int[] ids) {
         ArrayList<Cobro> ret = new ArrayList<Cobro>();
         for (int i = 0; i < ids.length; i++) {
@@ -114,8 +122,8 @@ public class Cobro {
 
     /**
      * *
-     * Función que convierte un array de objetos Cobro en un ArrayList
-     * de objetos Cobro con los mismos elementos que el array.
+     * Función que convierte un array de objetos Cobro en un ArrayList de
+     * objetos Cobro con los mismos elementos que el array.
      *
      * @param array de Cobro
      * @return ArrayList de Cobro

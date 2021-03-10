@@ -52,7 +52,16 @@ public class Paciente {
         this.tratamientos = tratamientos;
     }
    
-    
+    public Paciente(long id, String nombre, String apellido, String DNI,  String direccion, ArrayList<Tratamiento> tratamientos, ArrayList<Cita> citas, Historial historial){
+        this.id = id;
+        this.nombre = nombre;
+        this.apellidos = apellido;
+        this.DNI = DNI;
+        this.direccion = direccion;
+        this.tratamientos = tratamientos;
+        this.citas = citas;
+        this.historial = historial;
+    }
     
     
     public Historial getHistorial() {
@@ -156,7 +165,7 @@ public class Paciente {
         return nuevoPaciente;
     }
     
-  
+    
     
     
     

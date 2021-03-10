@@ -34,6 +34,10 @@ public class Enfermeria extends Empleado{
         super(id, nombre, apellidos, tlfcontacto, NIF, direccion);
         this.categoria = categoria;
     }
+    public Enfermeria(Empleado e, char c){
+     super(e);
+     this.categoria = categoria;
+    }
 
     //Constructor de copia
     public Enfermeria(Enfermeria enfermero) {

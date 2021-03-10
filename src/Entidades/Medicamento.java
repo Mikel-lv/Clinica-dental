@@ -105,6 +105,27 @@ public class Medicamento {
         return ret;
     }
     
+        /**
+     * Función que se le pasa una lista ArrayList<code>Medicamento</code> y un
+     * array de identificadores, y devuelve una sublista con los Medicamentos cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Tratamientos en las que buscar
+     * @param ids array de ids de Medicamento
+     * @return ArrayList<code>Medicamento</code>
+     */
+    public static ArrayList<Medicamento> arrayde(ArrayList<Medicamento> lista, int[] ids) {
+        ArrayList<Medicamento> ret = new ArrayList<Medicamento>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Medicamento) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
     @Override
     public String toString() {
         return "Medicamento{" + "id=" + id + ", nombre=" + nombre + ", principioactivo=" + principioactivo + ", dosismaxima=" + dosismaxima + ", citas=" + citas + '}';

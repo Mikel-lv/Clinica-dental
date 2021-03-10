@@ -87,6 +87,7 @@ public class Historial {
     public String toString() {
         return "Historial{" + "n\u00bahistorial=" + nºhistorial + ", descripci\u00f3n=" + descripción + ", alergias=" + alergias + '}';
     }
+    
         
         
 }

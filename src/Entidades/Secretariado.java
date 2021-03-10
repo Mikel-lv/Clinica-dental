@@ -38,6 +38,12 @@ public class Secretariado extends Empleado {
     public Secretariado() {
         super();
     }
+    
+    public Secretariado(int experiencia,Empleado e, ArrayList<InformeGlobal> informe){
+        super(e);
+        this.informesglobales = informesglobales;
+        this.experiencia = experiencia;
+    }
     //Constructor con todos los atributos
 
     public Secretariado(long id, String nombre, String apellidos, String tlfcontacto, String NIF, String direccion, int experiencia, ArrayList<InformeGlobal> informesglobales) {

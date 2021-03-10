@@ -53,6 +53,10 @@ public class Cirujano extends Empleado{
     public Cirujano(Empleado empleado){
         super(empleado);
     }
+    public Cirujano(Empleado e, ArrayList<Especialidad> especialidades){
+        super(e);
+        this.especialidades = especialidades;
+    }
 
     @Override
     public String toString() {

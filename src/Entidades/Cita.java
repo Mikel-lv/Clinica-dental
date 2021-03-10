@@ -195,5 +195,36 @@ public class Cita {
         }
         return ret;
     }
+        
+           public static final ArrayList<Cita> convertir(Cita[] array) {
+        ArrayList<Cita> ret = new ArrayList<Cita>();
+        for (Cita i : array) {
+            ret.add((Cita) i);
+        }
+        return ret;
+    }
+     
+    
+     /**
+     * Función que se le pasa una lista ArrayList<code>Cita</code> y un
+     * array de identificadores, y devuelve una sublista con las Citas cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Tratamientos en las que buscar
+     * @param ids array de ids de Cita
+     * @return ArrayList<code>Cita</code>
+     */
+    public static ArrayList<Cita> arrayde(ArrayList<Cita> lista, int[] ids) {
+        ArrayList<Cita> ret = new ArrayList<Cita>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Cita) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
     }
         

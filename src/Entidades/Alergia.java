@@ -36,6 +36,11 @@ public class Alergia {
         this.medicamento = medicamento;
         this.historiales = historiales;  
     }
+    public Alergia(long id, String nombre, ArrayList<Historial> historiales){
+        this.id = id;
+        this.nombre = nombre;
+        this.historiales = historiales;
+    }
     
     public Medicamento getMedicamento() {
         return medicamento;
@@ -92,13 +97,35 @@ public class Alergia {
         }
         return ret;
     }
+     
+    
+     /**
+     * Función que se le pasa una lista ArrayList<code>Alergia</code> y un
+     * array de identificadores, y devuelve una sublista con las alergias cuyos
+     * ids coinciden con los identificadores del array en la lista
+     *
+     * @param lista de Alergias en las que buscar
+     * @param ids array de ids de alergias
+     * @return ArrayList<code>Alergias</code>
+     */
+    public static ArrayList<Alergia> arrayde(ArrayList<Alergia> lista, int[] ids) {
+        ArrayList<Alergia> ret = new ArrayList<Alergia>();
+        for (int i = 0; i < ids.length; i++) {
+            for (int j = 0; j < lista.size(); j++) {
+                if (lista.get(j).getId() == ids[i]) {
+                    ret.add((Alergia) lista.get(j));
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
 
     @Override
     public String toString() {
         return "Alergia{" + "id=" + id + ", nombre=" + nombre + ", medicamento=" + medicamento + ", historiales=" + historiales + '}';
-    }
-    
     
     
     
 }
+    }

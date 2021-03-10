@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Entidades;
+import Entidades.Utilidades.Fecha;
 import java.sql.Date;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -131,15 +132,29 @@ public class Cita {
         
 
         System.out.println("Introduzca la fecha con formato dd/mm/yyyy");
-        String fecha = sc.nextLine();
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        Date testDate = null;
-        String date = fecha;
-
-
+        Fecha date = Utilidades.Fecha.nuevaFecha();
+        nuevaCita.setFecha(date.conversorFecha());
+              
         
         System.out.println("Introduce el rango horario");
-        nuevaCita.setRango_horario(in.nextLine().charAt(0));
+        char rango = in.nextLine().charAt(0);
+        //Validacion//        
+        nuevaCita.setRango_horario(rango);
+        
+        
+               
+        System.out.println("Introduzca Hora y minutos en formato HH:mm"); 
+        String HoraMinutos = in.next();
+
+        String[] HoraMinArray = HoraMinutos.split(":");
+
+        //Obtiene los valores enteros.
+        int valorHora = Integer.parseInt(HoraMinArray[0]); //Hora
+        int valorMinutos = Integer.parseInt(HoraMinArray[1]); // Minutos.
+
+        System.out.println("Hora: " + valorHora);
+        System.out.println("Minutos: " + valorMinutos);
+        
         
         
         

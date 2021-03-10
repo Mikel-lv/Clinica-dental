@@ -134,5 +134,30 @@ public class Cita {
         return nuevaCita;
     }
     
-    
-}
+        //Funcion para ver citas//
+        public static ArrayList<Cita> verCita(ArrayList<Cita> Citas){
+        ArrayList<Cita> ret  = new ArrayList<Cita>();
+        for (int x = 0;  x < Utilidades.numCitas(); x++){
+        Citas = cita.get(x);    
+            System.out.println (ArrayList);
+        }  
+        return ret;
+        }
+        
+        
+        // funcion para buscar cita por fecha, saldran todas las citas con la fecha introducida//
+        public static Cita buscarCita(Date fechacita, ArrayList<Cita> citas) {
+        Cita ret = null;
+        Scanner in = new Scanner (System.in);
+        System.out.println("Introduce la fecha");
+        Cita.setFecha(in.nextDate());
+        for (Cita c : citas) {
+            if (c.getFecha()== fechacita) {
+                ret = c;
+                break;
+            }
+        }
+        return ret;
+    }
+    }
+        

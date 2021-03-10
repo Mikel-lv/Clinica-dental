@@ -64,7 +64,7 @@ public class Revision extends Cita {
 
     @Override
     public String toString() {
-        return "Revision{" + "anotacion=" + anotacion + ", cirujano=" + cirujano + '}';
+        return "Revision{" + "anotacion:" + anotacion + ", realizada por el cirujano " + cirujano + '}';
     }
     
     

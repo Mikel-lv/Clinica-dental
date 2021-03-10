@@ -217,6 +217,44 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
     }
 
     private static void mostrarMenuGestionCitas() {
+        System.out.println("Pulsa 1 para ver citas.");
+        System.out.println("Pulsa 2 para crear una nueva cita.");
+        System.out.println("Pulsa 3 para buscar cita.");
+        System.out.println("Pulsa 0 para salir del menu.");
+        
+        int num = -1;
+        Scanner in = new Scanner (System.in);
+        do {
 
+            num = in.nextInt();
+            if (num < 0 || num > 3) {
+                System.out.println("\n Opcion incorrecta \n");
+                continue;
+            }
+            switch (num) {
+                case 0:
+                    continue;
+                case 1:
+                    //  Cita.verCita();
+                    System.out.println("Mostrando citas.");
+                    for (int x=0; x<Utilidades.numCitas; x++) {
+                    System.out.println(Utilidades.CITAS[x]);
+                    }
+                    
+                    
+                    break;
+                case 2:
+                    Cita.nuevaCita();
+                    break;
+                case 3:
+                    //  Cita.buscarCita();
+                   
+                     System.out.println("Ha pulsado buscar cita.");
+                     Cita.buscarCita(Cita);
+                    
+                    break;
+            }
+
+        } while (num < 0 || num > 3);
     }
 }

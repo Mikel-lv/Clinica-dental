@@ -100,19 +100,33 @@ public class Pago {
         Pago ret = new Pago();
         Scanner in = new Scanner(System.in);
         long id = nextIdPago();
-        ret.setId(id);;
-        System.out.println("Introduce la fecha del pago:");
+        ret.setId(id);
+
+        System.out.println("Introduce la fecha del pago: ");
         Date fecha = Utilidades.Fecha.nuevaFecha().conversorFecha();
         ret.setFechaPago(fecha);
-        System.out.println("Introduce el importe:");
-        double importe = in.nextDouble();
+
+        double importe = -1;
+        do {
+            System.out.println("Introduce el importe: ");
+            importe = in.nextDouble();
+            if (!Utilidades.validarImporte(importe)) {
+                System.out.println("Importe introducido inválido: ");
+            }
+        } while (!Utilidades.validarImporte(importe));
         ret.setImporte(importe);
-        System.out.println("Introduce el método de pago:");
-        String metodoPago = in.nextLine();
+
+        String metodoPago = "mal";
+        do {
+            System.out.println("Introduce el método de pago: ");
+            metodoPago = in.nextLine();
+            if (!Utilidades.validarMetodoPago(metodoPago)) {
+                System.out.println("Método de pago inválido");
+            }
+        } while (!Utilidades.validarMetodoPago(metodoPago));
         ret.setMetodoPago(metodoPago);
 
         return ret;
-
     }
 
     public static long nextIdPago() {

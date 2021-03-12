@@ -390,12 +390,21 @@ public class Utilidades {
         }
         return ret;
     }
-    
-    public static boolean validarImporte(double importe){
+
+    public static boolean validarImporte(double importe) {
         boolean ret = true;
-         if (importe <= 0) {
-             ret = false;
-         }                
+        if (importe <= 0) {
+            ret = false;
+        }
+        return ret;
+    }
+
+    public static boolean validarMetodoPago(String metodo) {
+        boolean ret = true;
+        
+        if (!(metodo.contentEquals("Tarjeta") && metodo.contentEquals("Metálico") && metodo.contentEquals("Transferencia"))) {
+            ret = false;
+        }
         return ret;
     }
 

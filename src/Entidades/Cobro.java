@@ -71,13 +71,13 @@ public class Cobro {
         ret.setId(id);
         System.out.println("Introduce la fecha fin del cobro:");
         Date fecha = Utilidades.Fecha.nuevaFecha().conversorFecha();
-        ret.setFechaFin(fecha);
-        System.out.println("Introduce el importe:");
+        ret.setFechaFin(fecha);        
+        double importe =-1;
         do {
             System.out.println("Introduce el importe del cobro: ");
-            double importe = in.nextDouble();
+            importe = in.nextDouble();
             if (!Utilidades.validarImporte(importe)) {
-                System.out.println("Cobro introducido inválido");
+                System.out.println("Importe introducido inválido: ");
             }
         }
             while(!Utilidades.validarImporte(importe));

@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package Entidades;
-
+import Entidades.Utilidades.Fecha;
 import java.sql.Date;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -144,8 +146,9 @@ public class Tratamiento {
         nuevoTratamiento.setId(in.nextInt());
         System.out.println("Introduce el nombre descriptivo");
         nuevoTratamiento.setNombre_descriptivo(in.nextLine());
-//        System.out.println("Introduce la fecha");   
-//        nuevoTratamiento.setFecha_inicio(in.ne));
+        System.out.println("Introduzca la fecha con formato dd/mm/yyyy");
+        Fecha date = Utilidades.Fecha.nuevaFecha();
+        nuevoTratamiento.setFecha_inicio(date.conversorFecha());
         System.out.println("¿Da su consentimiento?");
         nuevoTratamiento.setConsentimiento(in.nextBoolean());
         return nuevoTratamiento;

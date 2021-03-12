@@ -173,7 +173,7 @@ public class Cita {
         //Funcion para ver citas//
         public static ArrayList<Cita> verCita(ArrayList<Cita> Citas){
         ArrayList<Cita> ret  = new ArrayList<Cita>();
-        for (int x = 0;  x < Utilidades.numCitas(); x++){
+        for (int x = 0;  x < Utilidades.numCitas; x++){
         Citas = cita.get(x);    
             System.out.println (ArrayList);
         }  

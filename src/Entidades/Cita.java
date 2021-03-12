@@ -185,8 +185,9 @@ public class Cita {
         public static Cita buscarCita(Date fechacita, ArrayList<Cita> citas) {
         Cita ret = null;
         Scanner in = new Scanner (System.in);
-        System.out.println("Introduce la fecha");
-        Cita.setFecha(in.nextDate());
+        System.out.println("Introduzca la fecha con formato dd/mm/yyyy");
+        Fecha date = Utilidades.Fecha.nuevaFecha();
+        ret.setFecha(date.conversorFecha());
         for (Cita c : citas) {
             if (c.getFecha()== fechacita) {
                 ret = c;
@@ -227,4 +228,3 @@ public class Cita {
         return ret;
     }
     }
-        

@@ -45,9 +45,10 @@ public class Revision extends Cita {
     }
     
     public Revision(String anotacion, Cirujano cirujano, Cita c){
+        super(c);
         this.anotacion = anotacion;
         this.cirujano = cirujano;
-        super(c);
+        
     }
     
     

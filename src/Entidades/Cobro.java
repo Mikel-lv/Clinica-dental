@@ -76,11 +76,11 @@ public class Cobro {
         do {
             System.out.println("Introduce el importe del cobro: ");
             importe = in.nextDouble();
-            if (!Utilidades.validarImporte(importe)) {
+            if (!Utilidades.leerDouble(importe)) {
                 System.out.println("Importe introducido inválido: ");
             }
         }
-            while(!Utilidades.validarImporte(importe));
+            while(!Utilidades.leerDouble(importe));
             ret.setImporte(importe);
 
             return ret;                   

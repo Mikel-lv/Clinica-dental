@@ -174,22 +174,21 @@ public class Cita {
         public static ArrayList<Cita> verCita(ArrayList<Cita> Citas){
         ArrayList<Cita> ret  = new ArrayList<Cita>();
         for (int x = 0;  x < Utilidades.numCitas; x++){
-        Citas = cita.get(x);    
-            System.out.println (ArrayList);
+            System.out.println(Citas.get(x));
         }  
         return ret;
         }
         
         
         // funcion para buscar cita por fecha, saldran todas las citas con la fecha introducida//
-        public static Cita buscarCita(Date fechacita, ArrayList<Cita> citas) {
+        public static Cita buscarCita(ArrayList<Cita> citas) {
         Cita ret = null;
         Scanner in = new Scanner (System.in);
         System.out.println("Introduzca la fecha con formato dd/mm/yyyy");
         Fecha date = Utilidades.Fecha.nuevaFecha();
         ret.setFecha(date.conversorFecha());
         for (Cita c : citas) {
-            if (c.getFecha()== fechacita) {
+            if (c.getFecha()== date) {
                 ret = c;
                 break;
             }

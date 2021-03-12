@@ -250,7 +250,8 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
                     //  Cita.buscarCita();
                    
                      System.out.println("Ha pulsado buscar cita.");
-                     Cita.buscarCita(Cita);
+                    
+                     Cita.buscarCita(Cita.convertir(Utilidades.CITAS));
                     
                     break;
             }

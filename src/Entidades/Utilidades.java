@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.text.Normalizer;
 import java.time.LocalTime;
+import java.util.InputMismatchException;
 
 /**
  *
@@ -313,7 +314,7 @@ public class Utilidades {
             this.segundo = s;
         }
 
-        public Time conversorFecha() {
+        public Time conversorHora() {
             java.sql.Time ret = new Time(this.hora, this.minuto, this.segundo);
             return ret;
         }
@@ -391,13 +392,7 @@ public class Utilidades {
         return ret;
     }
 
-    public static boolean validarImporte(double importe) {
-        boolean ret = true;
-        if (importe <= 0) {
-            ret = false;
-        }
-        return ret;
-    }
+   
 
     public static boolean validarMetodoPago(String metodo) {
         boolean ret = true;
@@ -407,5 +402,37 @@ public class Utilidades {
         }
         return ret;
     }
+    
+    /**
+     * Función que pide al usuario que introduzca un valor decimal por la
+     * entrada estándar. Si el formato introducido no es correcto, avisa al
+     * usuario y le vuelve a pedir que lo introduzca de nuevo.
+     *
+     * @return el valor double introducido por el usuario
+     */
+    public static boolean leerDouble(double importe) {
+        importe = 0.0;
+        boolean correcto = false;
+        Scanner in;
+        do {
+            System.out.println("Introduzca un valor decimal (xx.xx)");
+            in = new Scanner(System.in, "ISO-8859-1");
+            try {
+                if (importe <= 0) {
+                correcto = false;
+                }
+                importe = in.nextDouble();
+                correcto = true;
+            } catch (InputMismatchException ime) {
+                System.out.println("Formato introducido incorrecto.");
+                correcto = false;
+            }
+        } while (!correcto);
+        return correcto;
+    }
+    public static String removeDiacriticalMarks(String string) {
+        //Form.NFC acepta ñ y distingue las tildes en español
+        return Normalizer.normalize(string, Normalizer.Form.NFC)
+                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");}
 
 }

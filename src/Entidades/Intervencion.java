@@ -145,25 +145,25 @@ public class Intervencion extends Cita {
 
     /**
      * Función que se le pasa una lista ArrayList<code>Intervencion</code> y un
-     * array de identificadores, y devuelve una sublista con los Intervenciones
+     * array de identificadores, y devuelve una sublista con las Intervenciones
      * cuyos ids coinciden con los identificadores del array en la lista
      *
      * @param lista de Intervencion en las que buscar
      * @param ids array de ids de Intervencion
      * @return ArrayList<code>Intervencion</code>
      */
-    public static ArrayList<Intervencion> arrayde(ArrayList<Intervencion> lista, int[] ids) {
-        ArrayList<Intervencion> ret = new ArrayList<Intervencion>();
-        for (int i = 0; i < ids.length; i++) {
-            for (int j = 0; j < lista.size(); j++) {
-                if (lista.get(j).getId() == ids[i]) {
-                    ret.add((Intervencion) lista.get(j));
-                    break;
-                }
-            }
-        }
-        return ret;
-    }
+//    public static ArrayList<Intervencion> arrayde(ArrayList<Intervencion> lista, int[] ids) {
+//        ArrayList<Intervencion> ret = new ArrayList<Intervencion>();
+//        for (int i = 0; i < ids.length; i++) {
+//            for (int j = 0; j < lista.size(); j++) {
+//                if (lista.get(j).getId() == ids[i]) {
+//                    ret.add((Intervencion) lista.get(j));
+//                    break;
+//                }
+//            }
+//        }
+//        return ret;
+//    }
 
     /**
      * Función que convierte un array de objetos Intervencion en un ArrayList de

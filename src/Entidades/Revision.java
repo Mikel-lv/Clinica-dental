@@ -93,18 +93,18 @@ public class Revision extends Cita {
      * @param ids array de ids de alergias
      * @return ArrayList<code>Revision</code>
      */
-    public static ArrayList<Revision> arrayde(ArrayList<Revision> lista, int[] ids) {
-        ArrayList<Revision> ret = new ArrayList<Revision>();
-        for (int i = 0; i < ids.length; i++) {
-            for (int j = 0; j < lista.size(); j++) {
-                if (lista.get(j).getId() == ids[i]) {
-                    ret.add((Revision) lista.get(j));
-                    break;
-                }
-            }
-        }
-        return ret;
-    }
+//    public static ArrayList<Revision> arrayde(ArrayList<Revision> lista, int[] ids) {
+//        ArrayList<Revision> ret = new ArrayList<Revision>();
+//        for (int i = 0; i < ids.length; i++) {
+//            for (int j = 0; j < lista.size(); j++) {
+//                if (lista.get(j).getId() == ids[i]) {
+//                    ret.add((Revision) lista.get(j));
+//                    break;
+//                }
+//            }
+//        }
+//        return ret;
+//    }
        
     
         public static Revision nuevaRevision(){

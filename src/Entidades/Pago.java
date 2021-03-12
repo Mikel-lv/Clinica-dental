@@ -110,10 +110,10 @@ public class Pago {
         do {
             System.out.println("Introduce el importe: ");
             importe = in.nextDouble();
-            if (!Utilidades.validarImporte(importe)) {
+            if (!Utilidades.leerDouble(importe)) {
                 System.out.println("Importe introducido inválido: ");
             }
-        } while (!Utilidades.validarImporte(importe));
+        } while (!Utilidades.leerDouble(importe));
         ret.setImporte(importe);
 
         String metodoPago = "mal";

@@ -82,13 +82,21 @@ public class Alergia {
    
     public static Alergia nuevoAlergia(){
         Alergia nuevoAlergia = new Alergia();
-        Scanner in = new Scanner(System.in);
-        System.out.println("Introduce el id");
-        nuevoAlergia.setId(in.nextInt());
-        System.out.println("Introduce el nombre");
-        nuevoAlergia.setNombre(in.nextLine());
+        Scanner in = new Scanner(System.in);      
+        nuevoAlergia.setId(nextIdAlergia());    
+        String nombre = null;
+       do{
+        System.out.println("Introduce el nombre: ");
+        nombre = in.nextLine();
+        if(!Utilidades.validarNombre(nombre)){
+            System.out.println("Nombre inválido: ");}        
+       } while(!Utilidades.validarNombre(nombre));    
+             
         return nuevoAlergia;
     }
+    
+    
+    
     
      public static final ArrayList<Alergia> convertir(Alergia[] array) {
         ArrayList<Alergia> ret = new ArrayList<Alergia>();
@@ -96,6 +104,15 @@ public class Alergia {
             ret.add((Alergia) i);
         }
         return ret;
+    }
+     
+     public static long nextIdAlergia() {
+        long ret = 0;
+        for (int i = 0; i < Utilidades.ALERGIAS.length; i++) {
+            if (Utilidades.ALERGIAS[i].id > ret);
+            ret = Utilidades.ALERGIAS[i].id;
+        }
+        return ret + 1;
     }
      
     

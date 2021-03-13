@@ -403,6 +403,7 @@ public class Utilidades {
         return ret;
     }
     
+        
     /**
      * Función que pide al usuario que introduzca un valor decimal por la
      * entrada estándar. Si el formato introducido no es correcto, avisa al
@@ -430,6 +431,7 @@ public class Utilidades {
         } while (!correcto);
         return correcto;
     }
+    
     public static String removeDiacriticalMarks(String string) {
         //Form.NFC acepta ñ y distingue las tildes en español
         return Normalizer.normalize(string, Normalizer.Form.NFC)

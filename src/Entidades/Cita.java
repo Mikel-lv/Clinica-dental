@@ -170,6 +170,16 @@ public class Cita {
         return nuevaCita;
     }
     
+        //Funcion para autocalcular el ID
+        public static long nextIdCita() {
+        long ret = 0;
+        for (int i = 0; i < Utilidades.CITAS.length; i++) {
+            if (Utilidades.CITAS[i].id > ret);
+            ret = Utilidades.CITAS[i].id;
+        }
+        return ret + 1;
+        
+        }
         //Funcion para ver citas//
         public static ArrayList<Cita> verCita(ArrayList<Cita> Citas){
         ArrayList<Cita> ret  = new ArrayList<Cita>();

@@ -198,7 +198,7 @@ public class Cita {
         Fecha date = Utilidades.Fecha.nuevaFecha();
         ret.setFecha(date.conversorFecha());
         for (Cita c : citas) {
-            if (c.getFecha()== date) {
+            if (c.getFecha()== date.conversorFecha()) {
                 ret = c;
                 break;
             }

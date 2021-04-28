@@ -5,7 +5,10 @@
  */
 package clinica.dental;
 
+import DAO.EmpleadoDAO;
 import Entidades.*;
+import ConexionBD.ConexionBD;
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,7 +22,10 @@ public class ClinicaDental {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Connection c = ConexionBD.conectarseBD();
+        EmpleadoDAO edao = new EmpleadoDAO();
+        Alergia a = new Alergia();
+        a.nuevoAlergia();
          ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
         int opcion = -1, opcion2 = -1;
@@ -51,6 +57,7 @@ public class ClinicaDental {
                     gestionEmpleados (opcion2, empleados);
                     break;
                 case 3:
+                    mostrarMenuGestionCitas();
                     break;
 
             }

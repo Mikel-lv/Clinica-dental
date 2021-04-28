@@ -23,7 +23,7 @@ public class Tratamiento {
     private Cobro cobro; // Objeto de tipo cobro
     private InformeGlobal informeGlobal; // Objeto de tipo informeglobal
     private ArrayList<Cita> citas = new ArrayList<Cita>();
-    
+  
     
     public Tratamiento() {
     }

@@ -29,7 +29,11 @@ public class Empleado {
     }
 
     public void setId(long id) {
-        this.id = id;
+        if(Utilidades.validarId(id)){
+        this.id = id;}
+        else{
+            System.out.println("ID inválido!");
+        }
     }
 
     public String getNombre() {
@@ -37,7 +41,11 @@ public class Empleado {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(Utilidades.validarNombre(nombre)){
+        this.nombre = nombre;}
+        else{
+            System.out.println("Nombre inválido");
+        }
     }
 
     public String getApellidos() {
@@ -45,7 +53,11 @@ public class Empleado {
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        if(Utilidades.validarApellido(apellidos)){
+        this.apellidos = apellidos;}
+        else{
+            System.out.println("Apellidos inválidos!");
+        }
     }
 
     public String getTlfcontacto() {
@@ -53,7 +65,11 @@ public class Empleado {
     }
 
     public void setTlfcontacto(String tlfcontacto) {
-        this.tlfcontacto = tlfcontacto;
+        if(Utilidades.validaTlfn(tlfcontacto)){
+        this.tlfcontacto = tlfcontacto;}
+        else{
+            System.out.println("Teléfono inválido");
+        }
     }
 
     public String getNIF() {
@@ -104,15 +120,46 @@ public class Empleado {
     public static Empleado nuevoEmpleado() {
         Empleado nuevoEmpleado = new Empleado();
         Scanner in = new Scanner(System.in);
+        long idEmpleado = 0;
+        do{
         System.out.println("Introduce el ID");
-        nuevoEmpleado.setId(in.nextInt());
+        idEmpleado = in.nextInt();
+        if(!Utilidades.validarId(idEmpleado)){
+            System.out.println("Has introducido un id inválido");
+        }
+        nuevoEmpleado.setId(idEmpleado);}
+        while(!Utilidades.validarId(idEmpleado));
         in.nextLine();
+        String nombre = "";
+        do{
         System.out.println("Introduce el nombre");
-        nuevoEmpleado.setNombre(in.nextLine());
+        nombre = in.nextLine();
+        if(!Utilidades.validarNombre(nombre)){
+            System.out.println("Has instroducido un nombre inválido");
+        }
+        nuevoEmpleado.setNombre(nombre);}
+        while(!Utilidades.validarNombre(nombre));
+        String apellido = "";
+        do{
         System.out.println("Introduce el apellido");
-        nuevoEmpleado.setApellidos(in.nextLine());
-        System.out.println("Introduce el telefono de contacto");
-        nuevoEmpleado.setTlfcontacto(in.nextLine());
+        apellido = in.nextLine();
+        if(!Utilidades.validarApellido(apellido)){
+            System.out.println("Has introducido un apellido inválido");
+        }
+        nuevoEmpleado.setApellidos(apellido);
+        }
+        while(!Utilidades.validarApellido(apellido));
+        
+        String telefono = "";
+        do{
+         System.out.println("Introduce el telefono de contacto");
+         telefono = in.nextLine();
+         if(!Utilidades.validaTlfn(telefono)){
+             System.out.println("Has introducido un telefono inválido");
+         }
+          nuevoEmpleado.setTlfcontacto(telefono);
+        }
+        while(!Utilidades.validaTlfn(telefono));
         System.out.println("Introduce el NIF");
         nuevoEmpleado.setNIF(in.nextLine());
         System.out.println("Introduce la direccion");

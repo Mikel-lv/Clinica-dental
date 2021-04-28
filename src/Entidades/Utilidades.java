@@ -391,6 +391,13 @@ public class Utilidades {
         }
         return ret;
     }
+    
+    public static boolean validarId(long id){
+        boolean ret = true;
+        
+        if (id <= 0) ret = false;
+        return ret;
+    }
 
    
 

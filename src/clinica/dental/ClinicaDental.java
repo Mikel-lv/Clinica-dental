@@ -22,8 +22,6 @@ public class ClinicaDental {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Connection c = ConexionBD.conectarseBD();
-        EmpleadoDAO edao = new EmpleadoDAO();
         Alergia a = new Alergia();
         a.nuevoAlergia();
          ArrayList<Empleado> empleados = new ArrayList<Empleado>();

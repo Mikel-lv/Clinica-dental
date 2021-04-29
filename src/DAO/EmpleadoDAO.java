@@ -20,17 +20,17 @@ import java.util.logging.Logger;
  * @author DAM108
  */
 public class EmpleadoDAO {
-    private Connection c;
+    private Connection conn;
     private Empleado e;
 
-    public Connection getC() {
-        return c;
+    public Connection getConn() {
+        return conn;
     }
 
-    public void setC(Connection c) {
-        this.c = c;
+    public void setConn(Connection conn) {
+        this.conn = conn;
     }
-
+    
     public Empleado getE() {
         return e;
     }
@@ -40,23 +40,24 @@ public class EmpleadoDAO {
     }
 
     public EmpleadoDAO() {
-        c = ConexionBD.conectarseBD();
+        conn = ConexionBD.conectarseBD();
     }
     
     public EmpleadoDAO(Empleado e){
         this.e = e;
-        c = ConexionBD.conectarseBD();
+        conn = ConexionBD.conectarseBD();
     }
     
     public ArrayList<Empleado> verEmpleados(){
         ArrayList<Empleado> empleados = new ArrayList<Empleado>();
-        Connection conn = c;
+       
         try {
             if (conn == null || conn.isClosed()) {
                 conn = ConexionBD.conectarseBD();
+             }
             try{
                 PreparedStatement pstmt = null;
-                pstmt = conn.prepareStatement("SELECT * FROM empleados");
+                pstmt = conn.prepareStatement("SELECT * FROM empleado");
                 ResultSet prs = pstmt.executeQuery();
                 while(prs.next()){
                     long id = prs.getInt("id");
@@ -71,7 +72,7 @@ public class EmpleadoDAO {
             }   catch (SQLException ex) {
                     Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }
+            
         
       
     }   catch (SQLException ex) {
@@ -85,4 +86,28 @@ public class EmpleadoDAO {
         }
     return empleados;
 }
+    public void eliminarEmpleado(int idempleado) {
+        try {
+            if (conn == null || conn.isClosed()) {
+                conn = ConexionBD.conectarseBD();
+            }
+            try {
+                PreparedStatement pstmt = null;
+                pstmt = conn.prepareStatement("DELETE FROM empleado WHERE id ='" + idempleado + "'" );
+                pstmt.executeUpdate();
+                System.out.println("Se ha eliminado el empleado de la BD.");
+            } catch (SQLException ex) {
+                System.out.println("Se ha producido una SQLException:" + ex.getMessage());
+                Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("NO se ha eliminado el ejemplar de la BD.");
+            } finally {
+                if (conn != null) {
+                    ConexionBD.cerrarBD();
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

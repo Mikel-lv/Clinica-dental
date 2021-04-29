@@ -83,7 +83,7 @@ public class Alergia {
     public static Alergia nuevoAlergia(){
         Alergia nuevoAlergia = new Alergia();
         Scanner in = new Scanner(System.in);      
-        nuevoAlergia.setId(nextIdAlergia());    
+        nuevoAlergia.setId(in.nextInt());    
         String nombre = null;
        do{
         System.out.println("Introduce el nombre: ");
@@ -106,14 +106,7 @@ public class Alergia {
         return ret;
     }
      
-     public static long nextIdAlergia() {
-        long ret = 0;
-        for (int i = 0; i < Utilidades.ALERGIAS.length; i++) {
-            if (Utilidades.ALERGIAS[i].id > ret);
-            ret = Utilidades.ALERGIAS[i].id;
-        }
-        return ret + 1;
-    }
+  
      
     
      /**

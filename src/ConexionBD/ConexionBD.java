@@ -19,7 +19,7 @@ public class ConexionBD {
 
     //DATOS BD
     static final String DB_URL = "jdbc:mysql://localhost:3306/clinicaDental";
-    static final String USER = "root";
+    static final String USER = "clinicadental";
     static final String PASS = "123456";
 
     static Connection conn = null;

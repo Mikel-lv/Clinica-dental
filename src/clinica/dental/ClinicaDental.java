@@ -22,8 +22,6 @@ public class ClinicaDental {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Alergia a = new Alergia();
-        a.nuevoAlergia();
          ArrayList<Empleado> empleados = new ArrayList<Empleado>();
 
         int opcion = -1, opcion2 = -1;
@@ -127,7 +125,8 @@ public class ClinicaDental {
     private static void mostrarMenuGestionEmpleados() {
         System.out.println("Pulsa 1 para ver empleados.");
         System.out.println("Pulsa 2 para buscar empleado.");
-        System.out.println("Pulsa 3 para crear nuevo empleado.");
+        System.out.println("Pulsa 3 para eliminar un empleado.");
+        System.out.println("Pulsa 4 para crear nuevo empleado.");
         System.out.println("Pulsa 0 para salir del menu.");
         
        /** int opcion = -1;
@@ -168,19 +167,26 @@ private static void gestionEmpleados(int opcion, ArrayList<Empleado> empleados) 
         Scanner in;
         int idEmpleado;
         Empleado e;
+        EmpleadoDAO EmpleadoDAO = new EmpleadoDAO();
         switch (opcion) {
             case 0: 
                 System.out.println("Ha salido del menú");
                 break;
             case 1:
                 System.out.println("Ha pulsado ver datos de empleados.");
-                Empleado.verEmpleado();
+                System.out.println(EmpleadoDAO.verEmpleados());    
                 break;
             case 2:
                 System.out.println("Ha pulsado buscar empleados.");
                 Empleado.buscarEmpleados(empleados);
                 break;
             case 3:
+                System.out.println("Ha pulsado eliminar un empleado.");
+                in = new Scanner(System.in, "ISO-8859-1");
+                idEmpleado = in.nextInt();
+                EmpleadoDAO.eliminarEmpleado(idEmpleado);
+                break;
+            case 4:
                 System.out.println("Ha pulsado crear un nuevo empleado.");
                 int opcion2 = -1;
                 in = new Scanner(System.in, "ISO-8859-1");

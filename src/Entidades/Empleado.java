@@ -114,7 +114,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", tlfcontacto=" + tlfcontacto + ", NIF=" + NIF + ", direccion=" + direccion + '}';
+        return "Empleado{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", tlfcontacto=" + tlfcontacto + ", NIF=" + NIF + ", direccion=" + direccion + '}' + "\n";
     }
 
     public static Empleado nuevoEmpleado() {
